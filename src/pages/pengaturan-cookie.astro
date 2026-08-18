@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "Pengaturan Cookie — Panduan Tugu Keris Siginjai";
+const description = "Atur preferensi cookie situs panduan independen Tugu Keris Siginjai, Kota Jambi.";
+---
+<BaseLayout {title} {description} lang="id">
+  <a class="skip-link" href="#isi">Lewati ke konten</a>
+  <header class="legal-header">
+    <a class="brand" href="/"><img src="/icons/keris-mark.svg" width="40" height="40" alt="" /><span><strong>Tugu Keris</strong><small>panduan Kota Jambi</small></span></a>
+    <div class="language-switch" aria-label="Pilih bahasa"><a href="/pengaturan-cookie/" lang="id" aria-current="page">ID</a><span aria-hidden="true">/</span><a href="/en/cookie-settings/" lang="en">EN</a></div>
+  </header>
+
+  <main id="isi">
+    <section class="legal-hero"><div class="wrap">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> LEGAL · PENGATURAN COOKIE</p>
+      <h1>Kontrol ada <em>pada Anda.</em></h1>
+      <p class="legal-lead">Pembaruan terakhir: Agustus 2026. Cookie penting dipakai agar preferensi persetujuan dapat disimpan. Cookie analitik hanya dimuat setelah Anda menyetujuinya.</p>
+    </div></section>
+
+    <section class="legal-body section wrap">
+      <h2>Apa itu cookie</h2>
+      <p>Cookie adalah file kecil yang disimpan peramban Anda untuk mengingat preferensi. Kami menggunakannya seminimal mungkin: penyimpanan penting untuk persetujuan, dan penyimpanan analitik opsional untuk memahami penggunaan situs secara anonim.</p>
+
+      <div class="cookie-option"><div><b>Cookie penting</b><span>Diperlukan untuk menyimpan preferensi. Selalu aktif.</span></div><span class="always-on">Aktif</span></div>
+      <label class="cookie-option"><span><b>Cookie analitik</b><span>Membantu membaca penggunaan anonim dengan Google Analytics.</span></span><input type="checkbox" data-analytics-choice /></label>
+
+      <div class="dialog-actions">
+        <button class="button button-ink" type="button" data-save-cookie>Simpan preferensi</button>
+        <button class="text-link" type="button" data-reject-cookie>Tolak analitik</button>
+      </div>
+      <p class="legal-status" data-save-status hidden>Preferensi tersimpan. Terima kasih.</p>
+
+      <h2>Mengelola dari peramban</h2>
+      <p>Anda juga dapat menghapus atau memblokir cookie melalui pengaturan peramban Anda. Perhatikan bahwa pemblokiran penyimpanan penting dapat memengaruhi kenyamanan situs ini.</p>
+
+      <h2>Pertanyaan</h2>
+      <p>Untuk pertanyaan terkait cookie dan privasi, baca <a class="source-link" href="/kebijakan-privasi/">Kebijakan Privasi</a> kami atau hubungi kami melalui kanal yang tersedia.</p>
+
+      <a class="legal-back" href="/">← Kembali ke beranda</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand"><img src="/icons/keris-mark.svg" width="40" height="40" alt="" /><p><b>Tugu Keris Siginjai</b><span>Panduan independen Kota Jambi</span></p></div><div class="footer-note"><p>Website ini merupakan proyek panduan informasi pengunjung independen dan nirlaba. Situs ini tidak berafiliasi dengan pemerintah, pengelola lokasi, atau organisasi resmi mana pun.</p><p>Informasi disusun dengan merujuk pada publikasi terbuka Pemerintah Kota Jambi, Dinas Pariwisata dan Kebudayaan Kota Jambi, dan portal pariwisata Indonesia; tidak memuat rekomendasi komersial.</p></div><div class="footer-links"><a href="/kebijakan-privasi/">Kebijakan Privasi</a><a href="/syarat-layanan/">Syarat Layanan</a><a href="/pengaturan-cookie/">Pengaturan Cookie</a></div><div class="footer-bottom"><span>© 2026 Panduan Tugu Keris Siginjai. Hak cipta konten asli dilindungi.</span><span>Foto memiliki hak cipta fotografer masing-masing.</span></div></div></footer>
+
+  <script is:inline>
+    const consentKey = "tks-cookie-consent";
+    const analyticsChoice = document.querySelector("[data-analytics-choice]");
+    const status = document.querySelector("[data-save-status]");
+    const loadAnalytics = () => {
+      if (document.querySelector("script[data-ga4]")) return;
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP";
+      script.dataset.ga4 = "true";
+      document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-HXM22WWPKP", { anonymize_ip: true });
+    };
+    const saved = localStorage.getItem(consentKey);
+    if (analyticsChoice) analyticsChoice.checked = saved === "accepted";
+    document.querySelector("[data-save-cookie]")?.addEventListener("click", () => {
+      const value = analyticsChoice?.checked ? "accepted" : "rejected";
+      localStorage.setItem(consentKey, value);
+      if (value === "accepted") loadAnalytics();
+      if (status) status.hidden = false;
+    });
+    document.querySelector("[data-reject-cookie]")?.addEventListener("click", () => {
+      localStorage.setItem(consentKey, "rejected");
+      if (analyticsChoice) analyticsChoice.checked = false;
+      if (status) status.hidden = false;
+    });
+  </script>
+</BaseLayout>

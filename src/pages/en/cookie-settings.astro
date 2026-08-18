@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const title = "Cookie Settings — Tugu Keris Siginjai Guide";
+const description = "Manage cookie preferences for the independent visitor guide to Tugu Keris Siginjai, Jambi City.";
+---
+<BaseLayout {title} {description} lang="en">
+  <a class="skip-link" href="#isi">Skip to content</a>
+  <header class="legal-header">
+    <a class="brand" href="/en/"><img src="/icons/keris-mark.svg" width="40" height="40" alt="" /><span><strong>Tugu Keris</strong><small>Jambi City guide</small></span></a>
+    <div class="language-switch" aria-label="Choose language"><a href="/pengaturan-cookie/" lang="id">ID</a><span aria-hidden="true">/</span><a href="/en/cookie-settings/" lang="en" aria-current="page">EN</a></div>
+  </header>
+
+  <main id="isi">
+    <section class="legal-hero"><div class="wrap">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> LEGAL · COOKIE SETTINGS</p>
+      <h1>You are <em>in control.</em></h1>
+      <p class="legal-lead">Last updated: August 2026. Essential storage keeps your consent preference. Analytics cookies load only after you agree.</p>
+    </div></section>
+
+    <section class="legal-body section wrap">
+      <h2>What cookies are</h2>
+      <p>Cookies are small files your browser keeps to remember preferences. We use them as sparingly as possible: essential storage for consent, and optional analytics storage to understand anonymous site use.</p>
+
+      <div class="cookie-option"><div><b>Essential cookies</b><span>Needed to store preferences. Always active.</span></div><span class="always-on">Active</span></div>
+      <label class="cookie-option"><span><b>Analytics cookies</b><span>Help us understand anonymous site use with Google Analytics.</span></span><input type="checkbox" data-analytics-choice /></label>
+
+      <div class="dialog-actions">
+        <button class="button button-ink" type="button" data-save-cookie>Save preferences</button>
+        <button class="text-link" type="button" data-reject-cookie>Reject analytics</button>
+      </div>
+      <p class="legal-status" data-save-status hidden>Preferences saved. Thank you.</p>
+
+      <h2>Managing from your browser</h2>
+      <p>You can also delete or block cookies through your browser settings. Note that blocking essential storage may affect this site’s convenience.</p>
+
+      <h2>Questions</h2>
+      <p>For questions about cookies and privacy, read our <a class="source-link" href="/en/privacy-policy/">Privacy Policy</a> or reach us through the channels available.</p>
+
+      <a class="legal-back" href="/en/">← Back to home</a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand"><img src="/icons/keris-mark.svg" width="40" height="40" alt="" /><p><b>Tugu Keris Siginjai</b><span>Independent Jambi City guide</span></p></div><div class="footer-note"><p>This website is an independent, non-profit visitor-information project. It is not affiliated with any government body, site operator, or official organisation.</p><p>Information refers to public material from Jambi City Government, the Jambi City Tourism and Culture Office, and the Indonesia tourism portal; it does not contain commercial recommendations.</p></div><div class="footer-links"><a href="/en/privacy-policy/">Privacy Policy</a><a href="/en/terms-of-service/">Terms of Service</a><a href="/en/cookie-settings/">Cookie Settings</a></div><div class="footer-bottom"><span>© 2026 Tugu Keris Siginjai Guide. Original content is protected.</span><span>Photographs remain the copyright of their respective photographers.</span></div></div></footer>
+
+  <script is:inline>
+    const consentKey = "tks-cookie-consent";
+    const analyticsChoice = document.querySelector("[data-analytics-choice]");
+    const status = document.querySelector("[data-save-status]");
+    const loadAnalytics = () => {
+      if (document.querySelector("script[data-ga4]")) return;
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP";
+      script.dataset.ga4 = "true";
+      document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-HXM22WWPKP", { anonymize_ip: true });
+    };
+    const saved = localStorage.getItem(consentKey);
+    if (analyticsChoice) analyticsChoice.checked = saved === "accepted";
+    document.querySelector("[data-save-cookie]")?.addEventListener("click", () => {
+      const value = analyticsChoice?.checked ? "accepted" : "rejected";
+      localStorage.setItem(consentKey, value);
+      if (value === "accepted") loadAnalytics();
+      if (status) status.hidden = false;
+    });
+    document.querySelector("[data-reject-cookie]")?.addEventListener("click", () => {
+      localStorage.setItem(consentKey, "rejected");
+      if (analyticsChoice) analyticsChoice.checked = false;
+      if (status) status.hidden = false;
+    });
+  </script>
+</BaseLayout>
