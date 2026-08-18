@@ -1,0 +1,232 @@
+---
+/**
+ * Tugu Keris Siginjai Guide · halaman tunggal
+ * Arah desain: nuansa malam Kota Jambi, emas pusaka, garis keris, dan dokumentasi perjalanan yang tenang.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Tugu Keris Siginjai — Panduan Independen Kota Jambi";
+const description = "Panduan independen untuk memahami sejarah, akses, fasilitas, dan cara berkunjung ke Tugu Keris Siginjai di Kota Jambi.";
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const attractionSchema = {
+  "@context": "https://schema.org",
+  "@type": ["TouristAttraction", "LocalBusiness"],
+  name: "Tugu Keris Siginjai",
+  alternateName: "Monument of Keris Siginjai Jambi",
+  description,
+  image: canonical ? new URL("/images/tugu-keris-siginjai-night.jpg", Astro.site).href : "/images/tugu-keris-siginjai-night.jpg",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "9J95+Q4F, Paal Lima, Kecamatan Kota Baru",
+    addressLocality: "Kota Jambi",
+    addressRegion: "Jambi",
+    postalCode: "36129",
+    addressCountry: "ID"
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -1.6305741540278058,
+    longitude: 103.6067082705946
+  },
+  openingHours: "Ruang terbuka; periksa pengaturan kegiatan setempat sebelum berkunjung.",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.6",
+    bestRating: "5",
+    ratingExplanation: "Nilai yang terlihat pada layanan peta pihak ketiga; dapat berubah."
+  },
+  isAccessibleForFree: true,
+  sameAs: ["https://www.indonesia.travel/us/en/destination/sumatra/jambi/tugu-keris-siginjai-jambi"]
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "Apakah ada tiket masuk ke Tugu Keris Siginjai?", acceptedAnswer: { "@type": "Answer", text: "Tugu berada di ruang terbuka publik dan umumnya dapat dilihat tanpa loket tiket. Pengunjung tetap disarankan memeriksa pengaturan acara atau pembatasan area setempat sebelum datang." } },
+    { "@type": "Question", name: "Kapan waktu yang baik untuk berkunjung?", acceptedAnswer: { "@type": "Answer", text: "Pagi dan menjelang malam biasanya lebih nyaman untuk berjalan kaki dan memotret. Saat malam, pencahayaan monumen menjadi bagian dari pengalaman visual; kondisi cuaca dan kegiatan kota dapat memengaruhi suasana." } },
+    { "@type": "Question", name: "Bagaimana menuju lokasi dari Bandara Sultan Thaha?", acceptedAnswer: { "@type": "Answer", text: "Gunakan kendaraan sewa, taksi bandara, layanan transportasi daring, atau tanyakan rute bus kota yang sedang beroperasi. Untuk rute dan jadwal terbaru, verifikasi pada penyedia layanan atau informasi transportasi setempat." } },
+    { "@type": "Question", name: "Apakah tersedia parkir dan toilet?", acceptedAnswer: { "@type": "Answer", text: "Ketersediaan parkir, toilet, dan pengaturan arus kendaraan dapat berubah mengikuti kegiatan di kawasan perkantoran dan ruang publik sekitar. Datanglah dengan waktu cadangan dan ikuti marka serta arahan petugas di lokasi." } }
+  ]
+};
+---
+<BaseLayout {title} {description}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(attractionSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <a class="skip-link" href="#isi">Lewati ke isi utama</a>
+  <header class="site-header" id="beranda">
+    <a class="brand" href="#beranda" aria-label="Kembali ke awal panduan">
+      <img src="/icons/keris-mark.svg" width="44" height="44" alt="" />
+      <span><strong>Tugu Keris</strong><small>panduan Kota Jambi</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-label="Buka navigasi" aria-expanded="false" data-menu-button>
+      <span></span><span></span>
+    </button>
+    <nav class="main-nav" aria-label="Navigasi utama" data-main-nav>
+      <a href="#makna">Makna</a>
+      <a href="#kunjungan">Kunjungan</a>
+      <a href="#akses">Akses</a>
+      <a href="#peta">Peta</a>
+      <a href="#tanya-jawab">FAQ</a>
+    </nav>
+    <div class="language-switch" aria-label="Pilih bahasa">
+      <a href="/" lang="id" aria-current="page">ID</a>
+      <span aria-hidden="true">/</span>
+      <a href="/en/" lang="en">EN</a>
+    </div>
+  </header>
+
+  <main id="isi">
+    <section class="hero" aria-labelledby="judul-utama">
+      <div class="hero-photo" aria-hidden="true">
+        <img src="/images/tugu-keris-siginjai-night.jpg" alt="" />
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content wrap">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> KOTA JAMBI · INDONESIA</p>
+        <h1 id="judul-utama">Tugu<br /><em>Keris Siginjai</em></h1>
+        <p class="hero-intro">Sebuah penanda kota yang membawa jejak pusaka Jambi—terlihat dari jauh, lalu dibaca lebih dekat melalui bentuk, cahaya, dan cerita di baliknya.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#kunjungan">Rencanakan kunjungan <span>↘</span></a>
+          <a class="text-link light" href="#makna">Baca cerita monumen <span>↓</span></a>
+        </div>
+      </div>
+      <div class="hero-meta wrap">
+        <span>01 / LANDMARK</span>
+        <span class="hero-line"></span>
+        <span>-1.630574, 103.606708</span>
+      </div>
+    </section>
+
+    <section class="intro section wrap" aria-labelledby="ringkasan-title">
+      <div class="section-label">01 / SEKILAS</div>
+      <div class="intro-grid">
+        <h2 id="ringkasan-title">Bukan sekadar<br /><em>monumen di simpang kota.</em></h2>
+        <div class="intro-copy">
+          <p>Tugu Keris Siginjai berada di kawasan Kota Baru, dekat pusat perkantoran Pemerintah Kota Jambi. Bentuknya mengangkat <i>Keris Siginjai</i>, pusaka yang dalam narasi museum dan pemerintah daerah berkaitan dengan kebesaran serta kepahlawanan Jambi.</p>
+          <p>Ruang di sekeliling tugu berubah mengikuti ritme kota: tempat orientasi, latar foto, titik temu, dan pada waktu tertentu bagian dari kegiatan publik. Karena itu, panduan ini membantu membaca tempatnya sekaligus menyiapkan kunjungan dengan tenang.</p>
+          <a href="https://www.indonesia.travel/us/en/destination/sumatra/jambi/tugu-keris-siginjai-jambi" class="source-link" target="_blank" rel="noreferrer">Buka rujukan pariwisata Indonesia <span>↗</span></a>
+        </div>
+      </div>
+      <div class="facts-grid" role="list" aria-label="Informasi ringkas">
+        <article role="listitem"><span class="fact-icon">⌁</span><p class="fact-label">IDENTITAS</p><h3>Ikon Kota Jambi</h3><p>Monumen berbentuk keris di kawasan Kota Baru.</p></article>
+        <article role="listitem"><span class="fact-icon">↟</span><p class="fact-label">SKALA</p><h3>± 28 meter</h3><p>Angka yang banyak muncul dalam pengenalan publik; bukan pengukuran situs ini.</p></article>
+        <article role="listitem"><span class="fact-icon">◎</span><p class="fact-label">RATING PETA</p><h3>4,6 / 5</h3><p>Nilai layanan peta pihak ketiga; dapat berubah sewaktu-waktu.</p></article>
+        <article role="listitem"><span class="fact-icon">◌</span><p class="fact-label">BIAYA</p><h3>Ruang terbuka</h3><p>Tidak terlihat loket tiket rutin; periksa pengaturan acara sebelum datang.</p></article>
+      </div>
+    </section>
+
+    <section class="meaning-section" id="makna" aria-labelledby="makna-title">
+      <div class="wrap meaning-layout">
+        <div class="meaning-visual">
+          <div class="keris-line keris-line-1"></div><div class="keris-line keris-line-2"></div><div class="keris-line keris-line-3"></div>
+          <img src="/icons/keris-mark.svg" alt="Simbol garis keris yang disederhanakan" />
+          <p>SI GINJAI / PUSAKA</p>
+        </div>
+        <div class="meaning-copy">
+          <p class="section-label gold">02 / MAKNA DI BALIK BENTUK</p>
+          <h2 id="makna-title">Keris sebagai<br /><em>bahasa kebesaran.</em></h2>
+          <p>Dalam koleksi Museum Nasional Indonesia, Keris Si Ginjei dicatat sebagai pusaka Kerajaan Jambi dan terkait simbol kekuasaan raja. Penjelasan Pemerintah Kota Jambi mengenai lambang daerah juga menempatkan Keris Siginjai sebagai tanda kebesaran serta kepahlawanan raja dan sultan Jambi.</p>
+          <p>Monumen ini bukan benda pusaka itu sendiri. Ia adalah bentuk kota yang menerjemahkan memori budaya ke dalam skala ruang publik—sebuah cara untuk mengenali Jambi saat memasuki Kota Baru.</p>
+          <div class="citation-box"><span>SUMBER UTAMA</span><a href="https://museumnasional.iheritage-virtual.id/collection/detail/75" target="_blank" rel="noreferrer">Museum Nasional Indonesia <b>↗</b></a><a href="https://jambikota.go.id/tentang/profil/arti_lambang" target="_blank" rel="noreferrer">Pemerintah Kota Jambi <b>↗</b></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit-section section wrap" id="kunjungan" aria-labelledby="kunjungan-title">
+      <div class="section-head"><div><p class="section-label">03 / KUNJUNGAN</p><h2 id="kunjungan-title">Datang dengan<br /><em>ekspektasi yang tepat.</em></h2></div><p class="section-lead">Tugu paling mudah dinikmati sebagai tujuan singkat yang disambungkan dengan agenda lain di Kota Jambi. Ruang terbuka ini tidak bekerja seperti museum dengan jalur kunjungan tetap.</p></div>
+      <div class="visit-grid">
+        <article class="visit-card dark-card"><p class="card-number">A / WAKTU</p><h3>Pagi atau selepas senja</h3><p>Untuk berjalan kaki dan mengambil foto, pertimbangkan pagi sebelum panas meningkat atau sore menuju malam ketika pencahayaan tugu menjadi lebih terlihat. Sesuaikan dengan cuaca dan agenda lokal.</p><div class="visit-tag">CUACA & KERAMAIAN BISA BERUBAH</div></article>
+        <article class="visit-card"><p class="card-number">B / DURASI</p><h3>30–60 menit</h3><p>Waktu ini cukup untuk melihat tugu, berfoto, membaca informasi singkat, dan mengamati suasana kawasan. Tambahkan waktu bila Anda datang saat kegiatan publik atau menggabungkannya dengan tempat lain.</p><div class="visit-tag">KUNJUNGAN SINGKAT</div></article>
+        <article class="visit-card photo-card"><img src="/images/jambi-civic-context.jpg" alt="Bangunan pemerintahan di Kota Jambi sebagai konteks kawasan kota" /><div><p class="card-number">C / KAWASAN</p><h3>Kota Baru</h3><p>Monumen berada di lingkungan administrasi kota; perhatikan akses, acara, dan arus kendaraan setempat.</p></div></article>
+      </div>
+    </section>
+
+    <section class="access-section" id="akses" aria-labelledby="akses-title">
+      <div class="wrap">
+        <div class="section-head on-dark"><div><p class="section-label gold">04 / AKSES & ORIENTASI</p><h2 id="akses-title">Bergerak di kota,<br /><em>bukan mengejar tiket.</em></h2></div><p class="section-lead">Gunakan titik tujuan “Monument of Keris Siginjai Jambi” atau alamat Paal Lima, Kota Baru. Waktu tempuh, rute, dan kapasitas jalan dapat berubah.</p></div>
+        <div class="transport-grid">
+          <article><span class="transport-mark">01</span><h3>Dari Bandara Sultan Thaha</h3><p>Dari bandara, opsi yang paling langsung adalah taksi bandara, kendaraan sewa, atau transportasi daring. Bus kota pernah melayani area bandara; konfirmasi rute dan jadwal yang berjalan sebelum mengandalkannya.</p></article>
+          <article><span class="transport-mark">02</span><h3>Bus & angkutan kota</h3><p>Pilih halte atau rute yang sedang beroperasi menuju kawasan Kota Baru, kemudian lanjutkan dengan berjalan kaki atau kendaraan jarak pendek. Informasi rute perlu dicek pada hari keberangkatan.</p></article>
+          <article><span class="transport-mark">03</span><h3>Taksi & transportasi daring</h3><p>Masukkan nama monumen atau titik koordinat sebagai tujuan. Ini membantu ketika pengemudi lebih mengenal area kantor wali kota daripada nama jalan yang tercantum pada peta.</p></article>
+          <article><span class="transport-mark">04</span><h3>Kendaraan pribadi</h3><p>Ikuti marka, arahan petugas, dan pengaturan rekayasa lalu lintas jika ada acara. Jangan mengandalkan bahu jalan sebagai area parkir; kapasitas dapat berubah cepat pada malam dan akhir pekan.</p></article>
+        </div>
+        <div class="utility-strip" aria-label="Fasilitas praktis di sekitar monumen">
+          <div><span>↗</span><p><b>Parkir</b>Periksa area resmi dan rambu di lokasi.</p></div><div><span>⌂</span><p><b>Toilet</b>Konfirmasi ketersediaan saat tiba.</p></div><div><span>✦</span><p><b>Makan & minum</b>Pilih jenis usaha di koridor sekitar; tanpa rekomendasi merek.</p></div><div><span>◫</span><p><b>Belanja kebutuhan</b>Temukan toko serba ada atau pasar sesuai kebutuhan perjalanan.</p></div><div><span>ϟ</span><p><b>Bahan bakar & pengisian</b>Rencanakan sebelum memasuki jam ramai.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="neighborhood-section section wrap" aria-labelledby="sekitar-title">
+      <div class="section-head"><div><p class="section-label">05 / SEKELILING KOTA</p><h2 id="sekitar-title">Lanjutkan hari<br /><em>dengan konteks Jambi.</em></h2></div><p class="section-lead">Bagian ini tidak menyusun daftar belanja atau rekomendasi bisnis. Gunakan sebagai ide kategori dan arah eksplorasi sebelum Anda menyusun rute sendiri.</p></div>
+      <div class="neighborhood-grid">
+        <article><div class="neighborhood-no">01</div><div><h3>Warisan & museum</h3><p>Untuk memahami konteks keris dan sejarah daerah, cari museum atau ruang pamer budaya yang dikelola lembaga publik. Periksa jam layanan sebelum datang.</p></div></article>
+        <article><div class="neighborhood-no">02</div><div><h3>Tepi Sungai Batanghari</h3><p>Ruang publik dan tepian sungai menawarkan cara lain membaca Jambi. Pilih area yang aman, ikuti petunjuk setempat, dan perhatikan kondisi cuaca.</p></div></article>
+        <article><div class="neighborhood-no">03</div><div><h3>Kuliner setempat</h3><p>Di sekitar pusat kota, cari rumah makan masakan Melayu-Jambi, kedai kopi, atau pilihan makan sederhana sesuai diet dan waktu perjalanan Anda; panduan ini tidak memberi endorsement pada usaha tertentu.</p></div></article>
+        <article><div class="neighborhood-no">04</div><div><h3>Perjalanan lebih jauh</h3><p>Jika memiliki waktu lebih panjang, riset tujuan budaya dan alam di wilayah Jambi secara terpisah. Jarak dan kondisi jalan berbeda dari kunjungan singkat di pusat kota.</p></div></article>
+      </div>
+    </section>
+
+    <section class="map-section" id="peta" aria-labelledby="peta-title">
+      <div class="wrap map-layout"><div><p class="section-label">06 / LOKASI</p><h2 id="peta-title">Titik yang mudah<br />dijadikan <em>orientasi.</em></h2><p>Alamat peta: 9J95+Q4F, Paal Lima, Kecamatan Kota Baru, Kota Jambi, Jambi 36129. Gunakan peta untuk menilai kondisi rute dari posisi Anda saat ini.</p><a class="button button-ink" href="https://www.google.com/maps/search/?api=1&query=9J95%2BQ4F%2C%20Paal%20Lima%2C%20Kec.%20Kota%20Baru%2C%20Kota%20Jambi%2C%20Jambi%2036129%2C%20Indonesia" target="_blank" rel="noreferrer">Buka di Google Maps <span>↗</span></a></div><div class="map-frame"><iframe title="Peta Tugu Keris Siginjai" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2851.2226351513896!2d103.6067082705946!3d-1.6305741540278058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e258620c925ab8d%3A0x8accc8e879b02a41!2sMonument%20of%20Keris%20Siginjai%20Jambi!5e1!3m2!1sid!2sid!4v1787019119814!5m2!1sid!2sid" width="600" height="450" style="border:0" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div>
+    </section>
+
+    <section class="faq-section section wrap" id="tanya-jawab" aria-labelledby="faq-title">
+      <div class="faq-intro"><p class="section-label">07 / FAQ</p><h2 id="faq-title">Pertanyaan sebelum<br /><em>melangkah.</em></h2><p>Jawaban di bawah dirancang untuk orientasi awal. Untuk perubahan acara, akses, atau layanan publik, periksa kanal resmi Kota Jambi menjelang keberangkatan.</p></div>
+      <div class="faq-list">
+        <details><summary>Apakah ada tiket masuk ke Tugu Keris Siginjai?<span>+</span></summary><p>Tugu berada di ruang terbuka publik dan umumnya dapat dilihat tanpa loket tiket. Tetap periksa pengaturan acara atau pembatasan area sebelum berkunjung.</p></details>
+        <details><summary>Kapan waktu yang baik untuk berkunjung?<span>+</span></summary><p>Pagi dan menjelang malam biasanya lebih nyaman untuk berjalan kaki dan memotret. Pencahayaan malam merupakan salah satu ciri visual monumen, namun suasana dipengaruhi cuaca serta aktivitas kota.</p></details>
+        <details><summary>Bagaimana menuju lokasi dari bandara?<span>+</span></summary><p>Pertimbangkan taksi bandara, kendaraan sewa, atau transportasi daring dari Bandara Sultan Thaha. Untuk bus dan angkutan kota, pastikan dulu rute serta jam operasi yang berlaku pada hari Anda bepergian.</p></details>
+        <details><summary>Apakah tersedia parkir, toilet, dan makan?<span>+</span></summary><p>Ketersediaan parkir dan toilet dapat berubah mengikuti pengaturan kawasan. Untuk makan atau kebutuhan ringan, gunakan kategori usaha di sekitar pusat kota sebagai orientasi dan pilih sendiri sesuai kebutuhan Anda.</p></details>
+      </div>
+    </section>
+
+    <section class="reference-section" aria-labelledby="rujukan-title"><div class="wrap reference-layout"><div><p class="section-label gold">08 / TRANSPARANSI</p><h2 id="rujukan-title">Panduan yang<br />mengakui <em>sumbernya.</em></h2></div><div><p>Informasi sejarah merujuk pada Museum Nasional Indonesia, Pemerintah Kota Jambi, dan portal pariwisata Indonesia. Data peta, rating, rute, serta kondisi layanan dapat berubah; gunakan sebagai orientasi awal, bukan pengganti konfirmasi pada hari perjalanan.</p><ul><li><a href="https://museumnasional.iheritage-virtual.id/collection/detail/75" target="_blank" rel="noreferrer">Museum Nasional Indonesia — Keris Si Ginjei ↗</a></li><li><a href="https://jambikota.go.id/tentang/profil/arti_lambang" target="_blank" rel="noreferrer">Pemerintah Kota Jambi — Arti Lambang ↗</a></li><li><a href="https://www.indonesia.travel/us/en/destination/sumatra/jambi/tugu-keris-siginjai-jambi" target="_blank" rel="noreferrer">Wonderful Indonesia — Tugu Keris Siginjai ↗</a></li><li><a href="https://commons.wikimedia.org/wiki/File:Tugu_Keris_Siginjai.jpg" target="_blank" rel="noreferrer">Foto monumen: Roby diery, CC BY-SA 4.0 ↗</a></li><li><a href="https://commons.wikimedia.org/wiki/File:Kantor_Gubernur_Jambi_-_Jambi_City,_JA_(25-11-2022).jpg" target="_blank" rel="noreferrer">Foto konteks kota: Firzafp, CC BY-SA 4.0 ↗</a></li></ul></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand"><img src="/icons/keris-mark.svg" width="40" height="40" alt="" /><p><b>Tugu Keris Siginjai</b><span>Panduan independen Kota Jambi</span></p></div><div class="footer-note"><p>Website ini merupakan proyek panduan informasi pengunjung independen dan nirlaba. Situs ini tidak berafiliasi dengan pemerintah, pengelola lokasi, atau organisasi resmi mana pun.</p><p>Informasi disusun dengan merujuk pada publikasi terbuka Pemerintah Kota Jambi, Dinas Pariwisata dan Kebudayaan Kota Jambi, dan portal pariwisata Indonesia; tidak memuat rekomendasi komersial.</p></div><div class="footer-links"><button type="button" data-dialog-open="privacy">Kebijakan Privasi</button><button type="button" data-dialog-open="terms">Syarat Layanan</button><button type="button" data-dialog-open="cookies">Pengaturan Cookie</button></div><div class="footer-bottom"><span>© 2026 Panduan Tugu Keris Siginjai. Hak cipta konten asli dilindungi.</span><span>Foto memiliki hak cipta fotografer masing-masing.</span></div></div></footer>
+
+  <dialog class="policy-dialog" data-dialog="privacy"><div><button class="dialog-close" type="button" aria-label="Tutup" data-dialog-close>×</button><p class="section-label">KEBIJAKAN PRIVASI</p><h2>Privasi yang seperlunya.</h2><p><b>Pembaruan terakhir: Agustus 2026.</b> Kami hanya mengumpulkan data minimum yang diperlukan untuk menjalankan situs, seperti data penelusuran teknis, cookie, dan informasi yang Anda kirimkan secara sukarela bila sarana kontak tersedia.</p><p>Data digunakan untuk memperbaiki konten, memahami pola penggunaan secara agregat, menanggapi permintaan, dan memenuhi kewajiban hukum. Google Maps dan Google Analytics dapat berlaku sebagai layanan pihak ketiga dengan kebijakan privasinya masing-masing.</p><p>Anda dapat meminta akses, koreksi, penghapusan, mengajukan keberatan, atau menghubungi otoritas perlindungan data yang relevan sesuai hukum yang berlaku.</p></div></dialog>
+  <dialog class="policy-dialog" data-dialog="terms"><div><button class="dialog-close" type="button" aria-label="Tutup" data-dialog-close>×</button><p class="section-label">SYARAT LAYANAN</p><h2>Informasi untuk orientasi.</h2><p><b>Pembaruan terakhir: Agustus 2026.</b> Dengan menggunakan situs ini, Anda memahami bahwa materi disediakan untuk informasi umum. Kami adalah situs wisata independen pihak ketiga dan tidak berafiliasi dengan pengelola atraksi, instansi pemerintah, atau operator komersial.</p><p>Kami berupaya menjaga ketepatan informasi, tetapi akses, kegiatan, kondisi tempat, dan layanan dapat berubah. Konfirmasikan hal penting melalui kanal resmi sebelum melakukan perjalanan. Situs disediakan apa adanya tanpa jaminan; keputusan perjalanan tetap menjadi tanggung jawab pengguna.</p><p>Desain dan konten asli dilindungi hak cipta. Foto monumen menggunakan materi berlisensi CC BY-SA 4.0 dengan atribusi; Google Maps digunakan sesuai ketentuannya.</p></div></dialog>
+  <dialog class="policy-dialog" data-dialog="cookies"><div><button class="dialog-close" type="button" aria-label="Tutup" data-dialog-close>×</button><p class="section-label">PENGATURAN COOKIE</p><h2>Kontrol ada pada Anda.</h2><p><b>Pembaruan terakhir: Agustus 2026.</b> Cookie penting dipakai agar preferensi persetujuan dapat disimpan. Cookie analitik bersifat opsional dan hanya memuat Google Analytics setelah Anda menyetujuinya.</p><div class="cookie-option"><div><b>Cookie penting</b><span>Diperlukan untuk menyimpan preferensi. Selalu aktif.</span></div><span class="always-on">Aktif</span></div><label class="cookie-option"><span><b>Cookie analitik</b><span>Membantu membaca penggunaan anonim dengan Google Analytics.</span></span><input type="checkbox" data-analytics-choice /></label><div class="dialog-actions"><button class="button button-ink" type="button" data-save-cookie>Simpan preferensi</button><button class="text-link" type="button" data-reject-cookie>Tolak analitik</button></div></div></dialog>
+
+  <aside class="cookie-banner" data-cookie-banner aria-label="Pilihan cookie" hidden><p><b>Cookie, secara singkat.</b> Kami menggunakan penyimpanan penting untuk preferensi dan hanya memuat analitik bila Anda setuju.</p><div><button class="button button-gold" type="button" data-accept-cookie>Setuju analitik</button><button class="text-link" type="button" data-reject-cookie>Tolak</button></div></aside>
+
+  <script is:inline>
+    const consentKey = "tks-cookie-consent";
+    const banner = document.querySelector("[data-cookie-banner]");
+    const analyticsChoice = document.querySelector("[data-analytics-choice]");
+    const loadAnalytics = () => {
+      if (document.querySelector("script[data-ga4]")) return;
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP";
+      script.dataset.ga4 = "true";
+      document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-HXM22WWPKP", { anonymize_ip: true });
+    };
+    const applyConsent = (value) => {
+      localStorage.setItem(consentKey, value);
+      if (value === "accepted") loadAnalytics();
+      if (analyticsChoice) analyticsChoice.checked = value === "accepted";
+      if (banner) banner.hidden = true;
+    };
+    const saved = localStorage.getItem(consentKey);
+    if (!saved && banner) banner.hidden = false;
+    if (saved === "accepted") loadAnalytics();
+    if (analyticsChoice) analyticsChoice.checked = saved === "accepted";
+    document.querySelectorAll("[data-accept-cookie]").forEach((button) => button.addEventListener("click", () => applyConsent("accepted")));
+    document.querySelectorAll("[data-reject-cookie]").forEach((button) => button.addEventListener("click", () => applyConsent("rejected")));
+    document.querySelector("[data-save-cookie]")?.addEventListener("click", () => { applyConsent(analyticsChoice?.checked ? "accepted" : "rejected"); document.querySelector("[data-dialog='cookies']")?.close(); });
+    document.querySelectorAll("[data-dialog-open]").forEach((button) => button.addEventListener("click", () => document.querySelector(`[data-dialog='${button.dataset.dialogOpen}']`)?.showModal()));
+    document.querySelectorAll("[data-dialog-close]").forEach((button) => button.addEventListener("click", () => button.closest("dialog")?.close()));
+    document.querySelectorAll("dialog").forEach((dialog) => dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); }));
+    const menuButton = document.querySelector("[data-menu-button]");
+    const mainNav = document.querySelector("[data-main-nav]");
+    menuButton?.addEventListener("click", () => { const open = menuButton.getAttribute("aria-expanded") === "true"; menuButton.setAttribute("aria-expanded", String(!open)); mainNav?.classList.toggle("is-open", !open); });
+    mainNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => { menuButton?.setAttribute("aria-expanded", "false"); mainNav?.classList.remove("is-open"); }));
+  </script>
+</BaseLayout>

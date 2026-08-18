@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Keris Siginjai Guide Mark</title>
+  <desc id="desc">Siluet bilah keris sederhana dalam lingkaran emas</desc>
+  <circle cx="60" cy="60" r="54" fill="#071821" stroke="#c99a46" stroke-width="4"/>
+  <path d="M64 18c-9 16 8 17-2 29-9 11 2 15-8 28-9 11 3 17-7 31l9 0c8-13 2-20 10-30 10-12-1-18 8-29 9-11-1-16 3-30-4 0-8 0-13 1Z" fill="#e5b95d"/>
+  <path d="M47 92c10-3 18-3 27 0l-4 11H51l-4-11Z" fill="#e5b95d"/>
+  <path d="M38 105h44" stroke="#e5b95d" stroke-width="4" stroke-linecap="round"/>
+</svg>
