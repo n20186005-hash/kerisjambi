@@ -1,0 +1,29 @@
+{
+  "name": "tugu-keris-siginjai-guide",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Panduan informasi independen untuk Tugu Keris Siginjai, Kota Jambi.",
+  "type": "module",
+  "packageManager": "pnpm@10.11.1",
+  "engines": {
+    "node": "22.13.0",
+    "pnpm": "10.11.1"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "pnpm build && wrangler deploy"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@astrojs/sitemap": "3.7.3",
+    "@tailwindcss/vite": "4.3.3",
+    "@types/node": "26.2.0",
+    "astro": "7.2.2",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3",
+    "wrangler": "4.123.0"
+  }
+}
