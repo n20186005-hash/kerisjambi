@@ -4,9 +4,10 @@
  * Arah desain: nuansa malam Kota Jambi, emas pusaka, garis keris, dan dokumentasi perjalanan yang tenang.
  */
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../lib/site";
 
-const title = "Tugu Keris Siginjai — Panduan Independen Kota Jambi";
-const description = "Panduan independen untuk memahami sejarah, akses, fasilitas, dan cara berkunjung ke Tugu Keris Siginjai di Kota Jambi.";
+const title = site.title.id;
+const description = site.description.id;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 const attractionSchema = {
   "@context": "https://schema.org",

@@ -30,7 +30,7 @@ pnpm deploy
 
 ## 域名配置
 
-生产域名只在 `PUBLIC_SITE_URL` 这一处配置。复制 `.env.example` 为 `.env`，然后填入真实域名，例如 `https://nama-domain-anda.id`。当该变量为空时，项目仍可构建；canonical、Open Graph 绝对 URL 与 sitemap 会自动省略，避免生成虚假的占位域名。
+生产域名固定为 `https://kerisjambi.com`（见 `astro.config.mjs` 中的 `PRODUCTION_SITE`）。该值确保 canonical、Open Graph 绝对 URL 与 sitemap 始终产出，避免 `http://` 与 `https://` 两个版本被搜索引擎重复收录。如需覆盖，可设置环境变量 `PUBLIC_SITE_URL`，它会优先生效。
 
 ```bash
 PUBLIC_SITE_URL=https://domain-anda.id

@@ -4,9 +4,10 @@
  * Design direction: Jambi after dark, heirloom gold, keris lines, and calm visitor-facing documentation.
  */
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../lib/site";
 
-const title = "Tugu Keris Siginjai — Independent Jambi City Guide";
-const description = "An independent guide to the story, access, facilities, and visitor planning for Tugu Keris Siginjai in Jambi City, Indonesia.";
+const title = site.title.en;
+const description = site.description.en;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 const attractionSchema = {
   "@context": "https://schema.org", "@type": ["TouristAttraction", "LocalBusiness"], name: "Tugu Keris Siginjai", alternateName: "Monument of Keris Siginjai Jambi", description,

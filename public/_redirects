@@ -1,0 +1,3 @@
+# WWW ke apex (Cloudflare Workers Static Assets)
+http://www.kerisjambi.com/* https://kerisjambi.com/:splat 301
+https://www.kerisjambi.com/* https://kerisjambi.com/:splat 301
