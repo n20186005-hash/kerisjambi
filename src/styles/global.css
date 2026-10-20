@@ -45,3 +45,8 @@ button { font:inherit; }
 .legal-back { display:inline-flex; align-items:center; gap:8px; margin-top:48px; padding-bottom:6px; border-bottom:1px solid var(--ink); color:var(--ink); font-size:12px; font-weight:700; text-decoration:none; }
 .legal-back:hover { color:var(--river); border-color:var(--river); }
 @media (max-width:620px) { .legal-header { min-height:64px; padding:13px 18px; }.legal-hero { padding:64px 0 70px; }.legal-body { padding-block:58px; } }
+
+.main-nav a,.language-switch a,.legal-nav a{min-height:44px;display:inline-flex;align-items:center}.language-switch a{min-width:44px;justify-content:center}
+@media(max-width:900px){.site-header{position:relative;flex-wrap:wrap;gap:1rem;background:var(--ink)}.main-nav,.main-nav.is-open{position:static;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;order:5;gap:.3rem;margin:0;padding:.5rem 0 0;border-top:1px solid rgba(255,251,243,.2);border-bottom:0}.main-nav a{padding:.4rem .3rem}.menu-button{display:none}.language-switch{margin-left:auto;margin-right:0}}
+
+.public-check{padding:1.5rem 0;font-size:.85rem;line-height:1.75}.public-check h2{font-size:1.3rem}.public-check a{text-decoration:underline}
