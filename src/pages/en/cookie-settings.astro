@@ -58,16 +58,16 @@ const description = "Manage cookie preferences for the independent visitor guide
       gtag("js", new Date());
       gtag("config", "G-HXM22WWPKP", { anonymize_ip: true });
     };
-    const saved = localStorage.getItem(consentKey);
+    let saved = null; try { saved = localStorage.getItem(consentKey); } catch {}
     if (analyticsChoice) analyticsChoice.checked = saved === "accepted";
     document.querySelector("[data-save-cookie]")?.addEventListener("click", () => {
       const value = analyticsChoice?.checked ? "accepted" : "rejected";
-      localStorage.setItem(consentKey, value);
+      try { localStorage.setItem(consentKey, value); } catch {}
       if (value === "accepted") loadAnalytics();
       if (status) status.hidden = false;
     });
     document.querySelector("[data-reject-cookie]")?.addEventListener("click", () => {
-      localStorage.setItem(consentKey, "rejected");
+      try { localStorage.setItem(consentKey, "rejected"); } catch {}
       if (analyticsChoice) analyticsChoice.checked = false;
       if (status) status.hidden = false;
     });
