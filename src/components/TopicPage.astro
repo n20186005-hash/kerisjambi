@@ -1,0 +1,213 @@
+---
+/**
+ * Tugu Keris Siginjai Guide · komponen halaman topik panjang-ekor.
+ * Merender konten id/en + JSON-LD (WebPage + BreadcrumbList + FAQPage).
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../lib/site";
+import { labelForLink, TOPIC_GROUP_LABELS, type Topic, type TopicContent } from "../data/topics";
+
+interface Props {
+  topic: Topic;
+  content: TopicContent;
+  lang: "id" | "en";
+}
+const { topic, content, lang } = Astro.props;
+
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const homeUrl = Astro.site ? new URL(lang === "id" ? "/" : "/en/", Astro.site).href : (lang === "id" ? "/" : "/en/");
+const guidesUrl = Astro.site
+  ? new URL((lang === "id" ? "/" : "/en/") + "#panduan-tematik", Astro.site).href
+  : (lang === "id" ? "/#panduan-tematik" : "/en/#panduan-tematik");
+
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: lang === "id" ? "Beranda" : "Home", item: homeUrl },
+    { "@type": "ListItem", position: 2, name: lang === "id" ? "Panduan Tematik" : "Thematic Guides", item: guidesUrl },
+    { "@type": "ListItem", position: 3, name: content.h1, item: canonical },
+  ],
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: content.faqs.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+};
+const webPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: content.h1,
+  description: content.metaDescription,
+  url: canonical,
+  inLanguage: lang === "id" ? "id-ID" : "en",
+  breadcrumb,
+  mainEntity: faqSchema,
+};
+
+const groupLabel = TOPIC_GROUP_LABELS[topic.group][lang];
+const updatedLabel = lang === "id" ? `Diperbarui ${topic.updated}` : `Updated ${topic.updated}`;
+const relatedItems = (topic.related || [])
+  .map((slug) => ({ slug, label: labelForLink(slug, lang) }))
+  .filter((r): r is { slug: string; label: string } => Boolean(r.label));
+
+const homeHref = lang === "id" ? "/" : "/en/";
+const otherHref = lang === "id" ? `/en/${topic.slug}/` : `/${topic.slug}/`;
+const backLabel = lang === "id" ? "Kembali ke panduan" : "Back to guide";
+---
+
+<BaseLayout title={content.metaTitle} description={content.metaDescription} lang={lang}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(webPage)} />
+  <a class="skip-link" href="#konten">{lang === "id" ? "Lewati ke isi" : "Skip to content"}</a>
+
+  <header class="legal-header">
+    <a class="brand" href={homeHref} aria-label={lang === "id" ? "Kembali ke panduan" : "Back to guide"}>
+      <img src="/icons/keris-mark.svg" width="40" height="40" alt="" />
+      <span><strong>Tugu Keris</strong><small>{lang === "id" ? "panduan Kota Jambi" : "Jambi City guide"}</small></span>
+    </a>
+    <div class="language-switch" aria-label={lang === "id" ? "Pilih bahasa" : "Select language"}>
+      <a href={homeHref} lang="id" aria-current={lang === "id" ? "page" : undefined}>ID</a>
+      <span aria-hidden="true">/</span>
+      <a href={otherHref} lang="en" aria-current={lang === "en" ? "page" : undefined}>EN</a>
+    </div>
+  </header>
+
+  <main id="konten" class="wrap topic-main">
+    <p class="section-label">{groupLabel} · {updatedLabel}</p>
+    <h1 class="topic-h1">{content.h1}</h1>
+    <p class="topic-lead">{content.lead}</p>
+
+    <div class="facts-grid" role="list" aria-label={lang === "id" ? "Informasi ringkas" : "At a glance"}>
+      {content.facts.map((f) => (
+        <article role="listitem">
+          <span class="fact-icon">⌁</span>
+          <p class="fact-label">{f.label}</p>
+          <h3>{f.value}</h3>
+        </article>
+      ))}
+    </div>
+
+    {content.sections.map((section) => (
+      <section class="topic-section">
+        <h2>{section.heading}</h2>
+        {section.paragraphs?.map((p) => <p>{p}</p>)}
+        {section.bullets && (
+          <ul>
+            {section.bullets.map((b) => <li>{b}</li>)}
+          </ul>
+        )}
+        {section.callout && <p class="topic-callout">{section.callout}</p>}
+      </section>
+    ))}
+
+    <section class="faq-section topic-faq" aria-labelledby="faq-topic">
+      <div class="faq-intro">
+        <p class="section-label">{lang === "id" ? "FAQ" : "FAQ"}</p>
+        <h2 id="faq-topic">{lang === "id" ? "Pertanyaan umum" : "Common questions"}</h2>
+      </div>
+      <div class="faq-list">
+        {content.faqs.map(({ q, a }) => (
+          <details><summary>{q}<span>+</span></summary><p>{a}</p></details>
+        ))}
+      </div>
+    </section>
+
+    {relatedItems.length > 0 && (
+      <section class="topic-related" aria-labelledby="topik-terkait">
+        <h2 id="topik-terkait">{lang === "id" ? "Topik terkait" : "Related topics"}</h2>
+        <div class="related-grid">
+          {relatedItems.map((r) => (
+            <a class="related-card" href={lang === "id" ? `/${r.slug}/` : `/en/${r.slug}/`}>
+              <span class="rc-label">{groupLabel}</span>
+              <h3>{r.label}</h3>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="reference-section topic-source" aria-labelledby="sumber-topic">
+      <div class="wrap reference-layout">
+        <div>
+          <p class="section-label gold">{lang === "id" ? "TRANSPARANSI" : "TRANSPARENCY"}</p>
+          <h2 id="sumber-topic">{lang === "id" ? "Panduan yang mengakui sumbernya" : "A guide that acknowledges its sources"}</h2>
+        </div>
+        <div>
+          <p>{lang === "id"
+            ? "Halaman ini merupakan bagian dari panduan pengunjung independen dan nirlaba. Informasi merujuk pada publikasi terbuka Pemerintah Kota Jambi; bukan rekomendasi komersial. Data rute dan layanan dapat berubah—konfirmasikan sebelum berangkat."
+            : "This page is part of an independent, non-profit visitor guide. It refers to public material from Jambi City Government; not a commercial recommendation. Route and service data may change—confirm before you travel."}</p>
+          <ul>
+            <li><a href="https://www.jambikota.go.id/tentang/profil/arti_lambang" target="_blank" rel="noreferrer">Pemerintah Kota Jambi — Arti Lambang ↗</a></li>
+          </ul>
+          <a class="legal-back" href={homeHref + "#panduan-tematik"}>{backLabel} <span>↩</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="/icons/keris-mark.svg" width="40" height="40" alt="" />
+        <p><b>Tugu Keris Siginjai</b><span>{lang === "id" ? "Panduan independen Kota Jambi" : "Independent Jambi City guide"}</span></p>
+      </div>
+      <div class="footer-note">
+        <p>{lang === "id"
+          ? "Situs ini merupakan proyek panduan informasi pengunjung independen dan nirlaba. Tidak berafiliasi dengan pemerintah, pengelola lokasi, atau organisasi resmi mana pun."
+          : "This website is an independent, non-profit visitor-information project. It is not affiliated with any government body, site operator, or official organisation."}</p>
+        <p>{lang === "id"
+          ? "Informasi merujuk pada publikasi terbuka Pemerintah Kota Jambi dan portal pariwisata Indonesia; tidak memuat rekomendasi komersial."
+          : "Information refers to public material from Jambi City Government and the Indonesia tourism portal; it does not contain commercial recommendations."}</p>
+      </div>
+      <div class="footer-links">
+        <a href={lang === "id" ? "/kebijakan-privasi/" : "/en/privacy-policy/"}>{lang === "id" ? "Kebijakan Privasi" : "Privacy Policy"}</a>
+        <a href={lang === "id" ? "/syarat-layanan/" : "/en/terms-of-service/"}>{lang === "id" ? "Syarat Layanan" : "Terms of Service"}</a>
+        <a href={lang === "id" ? "/pengaturan-cookie/" : "/en/cookie-settings/"}>{lang === "id" ? "Pengaturan Cookie" : "Cookie Settings"}</a>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Tugu Keris Siginjai Guide. Hak cipta konten asli dilindungi.</span>
+        <span>Foto memiliki hak cipta fotografer masing-masing.</span>
+      </div>
+    </div>
+  </footer>
+
+  <aside class="cookie-banner" data-cookie-banner aria-label="Cookie choices" hidden>
+    <p><b>{lang === "id" ? "Cookie, secara singkat." : "Cookies, briefly."}</b> {lang === "id"
+      ? "Kami menggunakan penyimpanan penting untuk preferensi dan hanya memuat analitik bila Anda setuju."
+      : "We use essential storage for preferences and load analytics only if you agree."}</p>
+    <div>
+      <button class="button button-gold" type="button" data-accept-cookie>{lang === "id" ? "Setuju analitik" : "Accept analytics"}</button>
+      <button class="text-link" type="button" data-reject-cookie>{lang === "id" ? "Tolak" : "Reject"}</button>
+    </div>
+  </aside>
+
+  <script is:inline>
+    const consentKey = "tks-cookie-consent";
+    const banner = document.querySelector("[data-cookie-banner]");
+    const analyticsChoice = document.querySelector("[data-analytics-choice]");
+    const loadAnalytics = () => {
+      if (document.querySelector("script[data-ga4]")) return;
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP";
+      script.dataset.ga4 = "true";
+      document.head.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-HXM22WWPKP", { anonymize_ip: true });
+    };
+    const applyConsent = (value) => {
+      try { localStorage.setItem(consentKey, value); } catch {}
+      if (value === "accepted") loadAnalytics();
+      if (analyticsChoice) analyticsChoice.checked = value === "accepted";
+      if (banner) banner.hidden = true;
+    };
+    let saved = null; try { saved = localStorage.getItem(consentKey); } catch {}
+    if (!saved && banner) banner.hidden = false;
+    if (saved === "accepted") loadAnalytics();
+    if (analyticsChoice) analyticsChoice.checked = saved === "accepted";
+    document.querySelectorAll("[data-accept-cookie]").forEach((button) => button.addEventListener("click", () => applyConsent("accepted")));
+    document.querySelectorAll("[data-reject-cookie]").forEach((button) => button.addEventListener("click", () => applyConsent("rejected")));
+  </script>
+</BaseLayout>

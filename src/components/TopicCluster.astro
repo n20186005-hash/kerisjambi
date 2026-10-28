@@ -1,0 +1,51 @@
+---
+/**
+ * Tugu Keris Siginjai Guide · bagian "Panduan Tematik" di beranda.
+ * Menautkan ke semua topik yang sudah siap (ready) berdasarkan klaster.
+ */
+import { getReadyTopics, TOPIC_GROUP_LABELS, TOPIC_GROUP_ORDER } from "../data/topics";
+
+interface Props {
+  lang: "id" | "en";
+}
+const { lang } = Astro.props;
+const ready = getReadyTopics();
+const isId = lang === "id";
+---
+
+<section class="topic-cluster section wrap" id="panduan-tematik" aria-labelledby="tc-title">
+  <div class="section-head">
+    <div>
+      <p class="section-label">{isId ? "09 / PANDUAN TEMATIK" : "09 / THEMATIC GUIDES"}</p>
+      <h2 id="tc-title">{isId ? <>Panduan tematik<br /><em>sekitar monumen</em></> : <>Thematic guides<br /><em>around the monument</em></>}</h2>
+    </div>
+    <p class="section-lead">
+      {isId
+        ? "Halaman mandiri yang menjawab kebutuhan wisatawan: sejarah, akses, kuliner, dan rute. Semua nirlaba dan merujuk sumber resmi."
+        : "Standalone pages answering traveller needs: history, access, food, and routes. All non-profit and source-referenced."}
+    </p>
+  </div>
+
+  {TOPIC_GROUP_ORDER.map((g) => {
+    const items = ready.filter((t) => t.group === g);
+    if (!items.length) return null;
+    const label = TOPIC_GROUP_LABELS[g][lang];
+    return (
+      <div class="cluster-block">
+        <h3 class="cluster-title">{label}</h3>
+        <div class="related-grid">
+          {items.map((t) => {
+            const c = t[lang]!;
+            const href = isId ? `/${t.slug}/` : `/en/${t.slug}/`;
+            return (
+              <a class="related-card" href={href}>
+                <span class="rc-label">{label}</span>
+                <h3>{c.h1}</h3>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    );
+  })}
+</section>

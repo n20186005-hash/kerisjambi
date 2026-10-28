@@ -16,21 +16,23 @@ const { title, description, lang = "id", noindex = false } = Astro.props;
 const canonical = !noindex && Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 const ogImage = Astro.site ? new URL("/images/tugu-keris-siginjai-night.jpg", Astro.site).href : undefined;
 
-// Pasangan bahasa untuk hreflang. Kunci = path halaman ini, nilai = pasangannya.
-const langPairs: Record<string, string> = {
-  "/": "/en/",
-  "/en/": "/",
-  "/kebijakan-privasi/": "/en/privacy-policy/",
-  "/en/privacy-policy/": "/kebijakan-privasi/",
-  "/syarat-layanan/": "/en/terms-of-service/",
-  "/en/terms-of-service/": "/syarat-layanan/",
-  "/pengaturan-cookie/": "/en/cookie-settings/",
-  "/en/cookie-settings/": "/pengaturan-cookie/",
+// Pasangan bahasa untuk hreflang halaman yang slug-nya TIDAK mencerminkan (beranda & halaman legal).
+// Topik panjang-ekor menggunakan slug yang sama di id/en, sehingga ditangani generik di bawah.
+const langPairs: Record<string, { id: string; en: string }> = {
+  "/": { id: "/", en: "/en/" },
+  "/en/": { id: "/", en: "/en/" },
+  "/kebijakan-privasi/": { id: "/kebijakan-privasi/", en: "/en/privacy-policy/" },
+  "/en/privacy-policy/": { id: "/kebijakan-privasi/", en: "/en/privacy-policy/" },
+  "/syarat-layanan/": { id: "/syarat-layanan/", en: "/en/terms-of-service/" },
+  "/en/terms-of-service/": { id: "/syarat-layanan/", en: "/en/terms-of-service/" },
+  "/pengaturan-cookie/": { id: "/pengaturan-cookie/", en: "/en/cookie-settings/" },
+  "/en/cookie-settings/": { id: "/pengaturan-cookie/", en: "/en/cookie-settings/" },
 };
 const absHref = (p: string) => (Astro.site ? new URL(p, Astro.site).href : p);
-const pair = langPairs[Astro.url.pathname];
-const idPath = pair ? (Astro.url.pathname.startsWith("/en/") ? pair : Astro.url.pathname) : Astro.url.pathname;
-const enPath = pair ? (Astro.url.pathname.startsWith("/en/") ? Astro.url.pathname : pair) : "/en/";
+const explicit = langPairs[Astro.url.pathname];
+const isEn = Astro.url.pathname.startsWith("/en/");
+const idPath = explicit ? explicit.id : (isEn ? (Astro.url.pathname.slice(3) || "/") : Astro.url.pathname);
+const enPath = explicit ? explicit.en : (isEn ? Astro.url.pathname : "/en" + (Astro.url.pathname === "/" ? "" : Astro.url.pathname));
 const hreflangId = absHref(idPath);
 const hreflangEn = absHref(enPath);
 const hreflangDefault = absHref(idPath);

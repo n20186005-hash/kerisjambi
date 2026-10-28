@@ -4,6 +4,7 @@
  * Arah desain: nuansa malam Kota Jambi, emas pusaka, garis keris, dan dokumentasi perjalanan yang tenang.
  */
 import BaseLayout from "../layouts/BaseLayout.astro";
+import TopicCluster from "../components/TopicCluster.astro";
 import { site } from "../lib/site";
 
 const title = site.title.id;
@@ -168,6 +169,7 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage",mainEntity:
     </section>
 
     <section class="reference-section" aria-labelledby="rujukan-title"><div class="wrap reference-layout"><div><p class="section-label gold">08 / TRANSPARANSI</p><h2 id="rujukan-title">Panduan yang<br />mengakui <em>sumbernya.</em></h2></div><div><p>Makna simbol merujuk pada penjelasan lambang Pemerintah Kota Jambi; laporan acara yang ditautkan memiliki tanggal tertentu, bukan jadwal rutin. Data peta, rating, rute, serta kondisi layanan dapat berubah; gunakan sebagai orientasi awal, bukan pengganti konfirmasi pada hari perjalanan.</p><ul><li><a href="https://www.jambikota.go.id/tentang/profil/arti_lambang" target="_blank" rel="noreferrer">Pemerintah Kota Jambi — Arti Lambang ↗</a></li><li><a href="https://www.jambikota.go.id/tentang/profil/arti_lambang" target="_blank" rel="noreferrer">Jambi City Government — emblem explanation ↗</a></li><li><a href="https://commons.wikimedia.org/wiki/File:Tugu_Keris_Siginjai.jpg" target="_blank" rel="noreferrer">Foto monumen: Roby diery, CC BY-SA 4.0 ↗</a></li><li><a href="https://commons.wikimedia.org/wiki/File:Kantor_Gubernur_Jambi_-_Jambi_City,_JA_(25-11-2022).jpg" target="_blank" rel="noreferrer">Foto konteks kota: Firzafp, CC BY-SA 4.0 ↗</a></li></ul></div></div></section>
+    <TopicCluster lang="id" />
   </main>
 
   <footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand"><img src="/icons/keris-mark.svg" width="40" height="40" alt="" /><p><b>Tugu Keris Siginjai</b><span>Panduan independen Kota Jambi</span></p></div><div class="footer-note"><p>Website ini merupakan proyek panduan informasi pengunjung independen dan nirlaba. Situs ini tidak berafiliasi dengan pemerintah, pengelola lokasi, atau organisasi resmi mana pun.</p><p>Informasi disusun dengan merujuk pada publikasi terbuka Pemerintah Kota Jambi, Dinas Pariwisata dan Kebudayaan Kota Jambi, dan portal pariwisata Indonesia; tidak memuat rekomendasi komersial.</p></div><div class="footer-links"><a href="/kebijakan-privasi/">Kebijakan Privasi</a><a href="/syarat-layanan/">Syarat Layanan</a><a href="/pengaturan-cookie/">Pengaturan Cookie</a></div><div class="footer-bottom"><span>© 2026 Panduan Tugu Keris Siginjai. Hak cipta konten asli dilindungi.</span><span>Foto memiliki hak cipta fotografer masing-masing.</span></div></div></footer>
