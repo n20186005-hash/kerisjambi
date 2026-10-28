@@ -2069,6 +2069,741 @@ const batchAC: Record<string, { id: TopicContent; en: TopicContent }> = {
   },
 };
 
+// === Konten batch D: Sekitar & Itinerari (9 halaman) ===
+const batchD: Record<string, { id: TopicContent; en: TopicContent }> = {
+  // D1 — Destinasi wisata terdekat
+  "destinasi-wisata-terdekat": {
+    id: {
+      metaTitle: "Destinasi Wisata Terdekat dari Tugu Keris Siginjai Jambi",
+      metaDescription: "Kategori destinasi wisata di sekitar Tugu Keris Siginjai: danau kota, taman, dan situs bersejarah. Panduan nirlaba dengan arah umum, tanpa rekomendasi komersial.",
+      h1: "Destinasi Wisata Terdekat dari Tugu Keris",
+      lead: "Berangkat dari monumen di Kota Baru, beberapa destinasi Jambi berada dalam jarak tempuh wajar. Panduan merangkum kategorinya dan arah umum tanpa menunjuk satu tempat sebagai 'wajib'.",
+      facts: [
+        { label: "JARAK", value: "Bervariasi" },
+        { label: "KATEGORI", value: "Alam & budaya" },
+        { label: "KAWASAN", value: "Kota Jambi" },
+        { label: "STATUS", value: "Nirlaba" },
+      ],
+      sections: [
+        {
+          heading: "Kategori destinasi di sekitar kota",
+          paragraphs: [
+            "Danau kota, taman kota, dan ruang publik berada dalam satu koridor Kota Baru dan sekitarnya. Ini pilihan santai tanpa perlu keluar kota.",
+            "Situs bersejarah seperti kompleks candi berada di luar pusat kota namun masih dalam provinsi Jambi. Gunakan nama umum sebagai arah, bukan satu alamat pasti.",
+          ],
+        },
+        {
+          heading: "Menyusun pilihan",
+          bullets: [
+            "Mulai dari monumen, lalu jelajahi Kota Baru.",
+            "Pilih danau atau taman untuk santai.",
+            "Untuk situs candi, siapkan waktu lebih lama.",
+          ],
+          callout: "Panduan merujuk kategori tempat, bukan satu rekomendasi. Konfirmasikan akses sebelum berangkat.",
+        },
+      ],
+      faqs: [
+        { q: "Apa destinasi dekat monumen?", a: "Kategori danau kota, taman, dan ruang publik di Kota Baru. Panduan tak menunjuk satu alamat wajib." },
+        { q: "Apakah ada situs bersejarah?", a: "Kompleks candi berada di luar kota. Ini destinasi seharian, bukan sekadar lewat." },
+        { q: "Sejauh apa destinasi ini?", a: "Bervariasi—pusat kota dekat, situs candi lebih jauh. Konfirmasikan rute di peta resmi." },
+        { q: "Apakah panduan berafiliasi?", a: "Tidak. Panduan nirlaba tanpa endorsement." },
+      ],
+    },
+    en: {
+      metaTitle: "Nearby Attractions from Keris Siginjai Monument Jambi",
+      metaDescription: "Categories of attractions around Keris Siginjai Monument: city lake, parks, and historical sites. A non-profit guide with general directions, no commercial picks.",
+      h1: "Nearby Attractions from the Keris Monument",
+      lead: "Starting from the monument in Kota Baru, several Jambi attractions sit within a reasonable drive. This guide summarises the categories and general directions without naming one place as 'must-visit'.",
+      facts: [
+        { label: "DISTANCE", value: "Varies" },
+        { label: "CATEGORY", value: "Nature & culture" },
+        { label: "AREA", value: "Jambi City" },
+        { label: "STATUS", value: "Non-profit" },
+      ],
+      sections: [
+        {
+          heading: "Attraction categories around the city",
+          paragraphs: [
+            "The city lake, city parks, and public spaces sit along one Kota Baru corridor and its surroundings—easy, in-town options.",
+            "Historical sites such as temple complexes lie outside the centre but still within Jambi province. Use the general name as orientation, not one fixed address.",
+          ],
+        },
+        {
+          heading: "Planning your picks",
+          bullets: [
+            "Start at the monument, then explore Kota Baru.",
+            "Pick a lake or park to relax.",
+            "For temple sites, allow more time.",
+          ],
+          callout: "This guide refers to place categories, not a single recommendation. Confirm access before you travel.",
+        },
+      ],
+      faqs: [
+        { q: "What is near the monument?", a: "Categories of city lake, parks, and public spaces in Kota Baru. The guide points to no single required address." },
+        { q: "Are there historical sites?", a: "Temple complexes lie outside the city—a full-day trip, not a quick stop." },
+        { q: "How far are these places?", a: "Varies—city centre is close, temple sites farther. Confirm the route on an official map." },
+        { q: "Is this guide affiliated?", a: "No. A non-profit guide with no endorsement." },
+      ],
+    },
+  },
+
+  // D2 — Itinerary 1 hari
+  "itinerary-1-hari": {
+    id: {
+      metaTitle: "Itinerary 1 Hari di Sekitar Tugu Keris Siginjai Jambi",
+      metaDescription: "Contoh rencana sehari keliling Kota Baru dan Tugu Keris Siginjai: pagi monumen, siang kuliner, sore ruang publik. Panduan nirlaba, bukan paket wisata.",
+      h1: "Itinerary Satu Hari di Sekitar Monumen",
+      lead: "Rencana ini memadukan monumen, jalan Kota Baru, kuliner khas, dan ruang publik dalam satu hari santai. Tanpa paket berbayar, hanya arah umum.",
+      facts: [
+        { label: "DURASI", value: "~1 hari" },
+        { label: "GAYA", value: "Santai" },
+        { label: "KAWASAN", value: "Kota Baru" },
+        { label: "STATUS", value: "Nirlaba" },
+      ],
+      sections: [
+        {
+          heading: "Alur yang bisa diikuti",
+          paragraphs: [
+            "Pagi hari mulai dari monumen saat cahaya nyaman, lalu berjalan menyusuri koridor Kota Baru.",
+            "Siang hari cocok menjelajah kategori kuliner khas; sore hari gunakan taman atau ruang publik untuk istirahat.",
+          ],
+        },
+        {
+          heading: "Tips menyusun hari",
+          bullets: [
+            "Datang pagi untuk foto monumen.",
+            "Selingi dengan kuliner khas.",
+            "Siang/sore santai di ruang publik.",
+          ],
+          callout: "Ini contoh rencana, bukan jadwal kaku. Sesuaikan dengan cuaca dan energi Anda.",
+        },
+      ],
+      faqs: [
+        { q: "Bisakah satu hari cukup?", a: "Ya, monumen dan Kota Baru padat namun dekat. Situs candi butuh hari terpisah." },
+        { q: "Kapan waktu terbaik?", a: "Pagi hingga sore. Hindari tengah hari terik bila peka cuaca." },
+        { q: "Perlu pemandu?", a: "Tidak. Panduan mandiri; gunakan peta umum sebagai arah." },
+        { q: "Apakah ini paket berbayar?", a: "Bukan. Panduan nirlaba tanpa paket atau endorsement." },
+      ],
+    },
+    en: {
+      metaTitle: "One-Day Itinerary Around Keris Siginjai Monument Jambi",
+      metaDescription: "A sample full-day plan around Kota Baru and Keris Siginjai Monument: monument in the morning, local food at midday, public spaces in the afternoon. A non-profit guide, not a tour package.",
+      h1: "One-Day Itinerary Around the Monument",
+      lead: "This plan blends the monument, Kota Baru streets, local food, and public spaces into one relaxed day. No paid package—just general directions.",
+      facts: [
+        { label: "DURATION", value: "~1 day" },
+        { label: "STYLE", value: "Relaxed" },
+        { label: "AREA", value: "Kota Baru" },
+        { label: "STATUS", value: "Non-profit" },
+      ],
+      sections: [
+        {
+          heading: "A flow you can follow",
+          paragraphs: [
+            "Start at the monument in the morning for comfortable light, then stroll the Kota Baru corridor.",
+            "Midday is good for local-food categories; use a park or public space in the afternoon to rest.",
+          ],
+        },
+        {
+          heading: "Tips for planning the day",
+          bullets: [
+            "Come early for monument photos.",
+            "Break it up with local food.",
+            "Relax in a public space mid/late afternoon.",
+          ],
+          callout: "This is a sample plan, not a fixed schedule. Adjust to weather and your energy.",
+        },
+      ],
+      faqs: [
+        { q: "Is one day enough?", a: "Yes—the monument and Kota Baru are compact and close. Temple sites need a separate day." },
+        { q: "When is the best time?", a: "Morning to afternoon. Avoid the harsh midday sun if weather-sensitive." },
+        { q: "Do I need a guide?", a: "No. Self-guided; use a general map for orientation." },
+        { q: "Is this a paid package?", a: "No. A non-profit guide with no package or endorsement." },
+      ],
+    },
+  },
+
+  // D3 — Itinerary setengah hari
+  "itinerary-setengah-hari": {
+    id: {
+      metaTitle: "Itinerary Setengah Hari di Sekitar Tugu Keris Siginjai Jambi",
+      metaDescription: "Rencana separuh hari keliling monumen dan Kota Baru: monumen, jalan kaki, kuliner singkat. Panduan nirlaba tanpa paket.",
+      h1: "Itinerary Setengah Hari di Sekitar Monumen",
+      lead: "Punya waktu terbatas? Rencana ini fokus pada monumen dan koridor Kota Baru dalam separuh hari, cocok sebelum atau sesudah urusan.",
+      facts: [
+        { label: "DURASI", value: "~3–4 jam" },
+        { label: "GAYA", value: "Singkat" },
+        { label: "KAWASAN", value: "Kota Baru" },
+        { label: "STATUS", value: "Nirlaba" },
+      ],
+      sections: [
+        {
+          heading: "Fokus separuh hari",
+          paragraphs: [
+            "Luangkan waktu di monumen untuk foto dan membaca makna lambang, lalu berjalan singkat di Kota Baru.",
+            "Sisakan waktu untuk kuliner singkat sebelum kembali.",
+          ],
+        },
+        {
+          heading: "Cocok untuk",
+          bullets: [
+            "Wisatawan singgah.",
+            "Sebelum/sesudah urusan.",
+            "Keluarga dengan anak.",
+          ],
+          callout: "Rencana fleksibel; sesuaikan dengan waktu tiba Anda.",
+        },
+      ],
+      faqs: [
+        { q: "Cukup 3–4 jam?", a: "Untuk monumen dan Kota Baru, cukup. Destinasi luar kota butuh waktu lebih." },
+        { q: "Bisa pagi atau sore?", a: "Bisa keduanya. Pagi nyaman untuk foto; sore untuk santai." },
+        { q: "Ramah anak?", a: "Ya, jalan datar di sekitar monumen ramah keluarga." },
+        { q: "Apakah berafiliasi?", a: "Tidak. Panduan nirlaba." },
+      ],
+    },
+    en: {
+      metaTitle: "Half-Day Itinerary Around Keris Siginjai Monument Jambi",
+      metaDescription: "A half-day plan around the monument and Kota Baru: monument, a short walk, quick local food. A non-profit guide with no package.",
+      h1: "Half-Day Itinerary Around the Monument",
+      lead: "Short on time? This plan focuses on the monument and Kota Baru corridor in half a day—handy before or after errands.",
+      facts: [
+        { label: "DURATION", value: "~3–4 hours" },
+        { label: "STYLE", value: "Short" },
+        { label: "AREA", value: "Kota Baru" },
+        { label: "STATUS", value: "Non-profit" },
+      ],
+      sections: [
+        {
+          heading: "Half-day focus",
+          paragraphs: [
+            "Spend time at the monument for photos and to read the symbol's meaning, then take a short walk in Kota Baru.",
+            "Leave time for a quick bite before heading back.",
+          ],
+        },
+        {
+          heading: "Good for",
+          bullets: [
+            "Transit visitors.",
+            "Before/after errands.",
+            "Families with children.",
+          ],
+          callout: "Flexible plan; adjust to your arrival time.",
+        },
+      ],
+      faqs: [
+        { q: "Is 3–4 hours enough?", a: "For the monument and Kota Baru, yes. Out-of-town spots need more time." },
+        { q: "Morning or afternoon?", a: "Either works. Morning is good for photos; afternoon for relaxing." },
+        { q: "Family-friendly?", a: "Yes—the flat paths around the monument suit families." },
+        { q: "Is this affiliated?", a: "No. A non-profit guide." },
+      ],
+    },
+  },
+
+  // D4 — Mall & pasar tradisional
+  "mall-pasar-tradisional": {
+    id: {
+      metaTitle: "Mall & Pasar Tradisional Dekat Tugu Keris Siginjai Jambi",
+      metaDescription: "Kategori belanja di sekitar Tugu Keris Siginjai: pasar tradisional dan pusat perbelanjaan umum. Panduan nirlaba, tanpa sebut merek.",
+      h1: "Mall & Pasar Tradisional di Sekitar Tugu",
+      lead: "Untuk belanja harian atau oleh-oleh, Kota Baru punya kategori pasar tradisional dan pusat perbelanjaan umum. Panduan menyebut kategori, bukan satu merek.",
+      facts: [
+        { label: "KATEGORI", value: "Pasar & mall" },
+        { label: "KAWASAN", value: "Kota Baru" },
+        { label: "JENIS", value: "Harian & oleh-oleh" },
+        { label: "STATUS", value: "Nirlaba" },
+      ],
+      sections: [
+        {
+          heading: "Pasar tradisional",
+          paragraphs: [
+            "Pasar tradisional menawarkan bahan makanan, jajanan, dan barang harian dengan harga wajar. Ini denyut rutin warga Kota Jambi.",
+            "Gunakan 'pasar' di pusat kota sebagai orientasi; tiap pasar punya kekhasan sendiri.",
+          ],
+        },
+        {
+          heading: "Pusat perbelanjaan umum",
+          paragraphs: [
+            "Pusat perbelanjaan di Kota Baru cocok untuk ruang ber-AC, oleh-oleh, dan kebutuhan umum. Panduan tidak memilih satu nama.",
+          ],
+        },
+        {
+          heading: "Tips berbelanja",
+          bullets: [
+            "Bandingkan harga di pasar.",
+            "Tanya warga arah pasar terdekat.",
+            "Hindari markup wisatawan.",
+          ],
+          callout: "Panduan tak mengulas harga toko; gunakan kategori sebagai arah belanja.",
+        },
+      ],
+      faqs: [
+        { q: "Di mana belanja dekat sini?", a: "Pasar tradisional dan pusat perbelanjaan umum di Kota Baru. Tidak menunjuk satu tempat." },
+        { q: "Ada oleh-oleh khas?", a: "Kategori jajanan pasar dan makanan khas tersedia. Panduan tak menyebut merek." },
+        { q: "Aman untuk wisatawan?", a: "Ya, area umum. Konfirmasikan jam operasi di lokasi." },
+        { q: "Apakah panduan berafiliasi?", a: "Tidak. Nirlaba tanpa endorsement." },
+      ],
+    },
+    en: {
+      metaTitle: "Malls & Traditional Markets Near Keris Siginjai Monument Jambi",
+      metaDescription: "Shopping categories around Keris Siginjai Monument: traditional markets and general shopping centres. A non-profit guide, no brand names.",
+      h1: "Malls & Traditional Markets Around the Monument",
+      lead: "For daily shopping or souvenirs, Kota Baru has traditional markets and general shopping centres. The guide names categories, not one brand.",
+      facts: [
+        { label: "CATEGORY", value: "Markets & malls" },
+        { label: "AREA", value: "Kota Baru" },
+        { label: "TYPE", value: "Daily & souvenirs" },
+        { label: "STATUS", value: "Non-profit" },
+      ],
+      sections: [
+        {
+          heading: "Traditional markets",
+          paragraphs: [
+            "Traditional markets offer foodstuffs, snacks, and daily goods at fair prices—the everyday rhythm of Kota Jambi residents.",
+            "Use 'pasar' in the city centre as orientation; each market has its own character.",
+          ],
+        },
+        {
+          heading: "General shopping centres",
+          paragraphs: [
+            "Shopping centres in Kota Baru suit air-conditioned space, souvenirs, and general needs. The guide picks no single name.",
+          ],
+        },
+        {
+          heading: "Shopping tips",
+          bullets: [
+            "Compare prices at the market.",
+            "Ask residents for the nearest market.",
+            "Avoid tourist markups.",
+          ],
+          callout: "The guide reviews no shop prices; use categories as shopping direction.",
+        },
+      ],
+      faqs: [
+        { q: "Where to shop near here?", a: "Traditional markets and general shopping centres in Kota Baru. No single place named." },
+        { q: "Are there local souvenirs?", a: "Categories of market snacks and local food exist. The guide names no brand." },
+        { q: "Safe for visitors?", a: "Yes, public areas. Confirm opening hours on site." },
+        { q: "Is this guide affiliated?", a: "No. Non-profit with no endorsement." },
+      ],
+    },
+  },
+
+  // D5 — Aktivitas malam hari
+  "aktivitas-malam-hari": {
+    id: {
+      metaTitle: "Aktivitas Malam Hari di Sekitar Tugu Keris Siginjai Jambi",
+      metaDescription: "Kategori aktivitas malam di sekitar Tugu Keris Siginjai: kuliner malam, nongkrong, jalan kaki santai. Panduan nirlaba tanpa rekomendasi.",
+      h1: "Aktivitas Malam Hari di Sekitar Tugu",
+      lead: "Saat hari gelap, koridor Kota Baru tetap punya kategori kuliner malam dan tempat nongkrong. Panduan merangkum pilihan umum tanpa menyebut merek.",
+      facts: [
+        { label: "WAKTU", value: "Malam" },
+        { label: "KATEGORI", value: "Kuliner & nongkrong" },
+        { label: "KAWASAN", value: "Kota Baru" },
+        { label: "STATUS", value: "Nirlaba" },
+      ],
+      sections: [
+        {
+          heading: "Kuliner malam",
+          paragraphs: [
+            "Warung dan kedai di sekitar monumen sering buka malam, cocok untuk makan khas setelah keliling kota.",
+            "Gunakan kategori 'kuliner malam' sebagai arah, bukan satu alamat wajib.",
+          ],
+        },
+        {
+          heading: "Tempat nongkrong",
+          paragraphs: [
+            "Kafe dan ruang santai di Kota Baru jadi pilihan melepas lelah. Tanya warga untuk arah umum.",
+          ],
+        },
+        {
+          heading: "Aman dan nyaman",
+          bullets: [
+            "Pilih area ramai.",
+            "Gunakan transportasi daring untuk pulang.",
+            "Jaga barang pribadi.",
+          ],
+          callout: "Panduan tak merekomendasikan tempat tertentu; gunakan kategori sebagai arah.",
+        },
+      ],
+      faqs: [
+        { q: "Apa bisa dilakukan malam hari?", a: "Kuliner malam dan nongkrong di Kota Baru. Panduan tak menunjuk merek." },
+        { q: "Aman berkeliling malam?", a: "Gunakan area ramai dan transportasi daring. Konfirmasikan kondisi setempat." },
+        { q: "Warung buka sampai jam berapa?", a: "Bervariasi; panduan tak mematok jam. Cek di lokasi." },
+        { q: "Apakah berafiliasi?", a: "Tidak. Panduan nirlaba." },
+      ],
+    },
+    en: {
+      metaTitle: "Night Activities Around Keris Siginjai Monument Jambi",
+      metaDescription: "Categories of night activities around Keris Siginjai Monument: night food, hangouts, relaxed walks. A non-profit guide with no recommendations.",
+      h1: "Night Activities Around the Monument",
+      lead: "After dark, the Kota Baru corridor still offers night-food categories and hangout spots. The guide summarises common options without naming brands.",
+      facts: [
+        { label: "TIME", value: "Night" },
+        { label: "CATEGORY", value: "Food & hangouts" },
+        { label: "AREA", value: "Kota Baru" },
+        { label: "STATUS", value: "Non-profit" },
+      ],
+      sections: [
+        {
+          heading: "Night food",
+          paragraphs: [
+            "Warung and kiosks near the monument often open at night—good for local food after exploring the city.",
+            "Use the 'night food' category as direction, not one required address.",
+          ],
+        },
+        {
+          heading: "Hangout spots",
+          paragraphs: [
+            "Cafés and relaxed lounges in Kota Baru are options to unwind. Ask residents for general directions.",
+          ],
+        },
+        {
+          heading: "Safe and comfortable",
+          bullets: [
+            "Pick busy areas.",
+            "Use ride-hailing to get back.",
+            "Mind your belongings.",
+          ],
+          callout: "The guide recommends no specific place; use categories as direction.",
+        },
+      ],
+      faqs: [
+        { q: "What can I do at night?", a: "Night food and hangouts in Kota Baru. The guide names no brand." },
+        { q: "Safe to walk around at night?", a: "Use busy areas and ride-hailing. Confirm local conditions." },
+        { q: "How late are warung open?", a: "Varies; the guide sets no hours. Check on site." },
+        { q: "Is this affiliated?", a: "No. A non-profit guide." },
+      ],
+    },
+  },
+
+  // D6 — Spot foto instagramable
+  "spot-foto-instagramable": {
+    id: {
+      metaTitle: "Spot Foto Instagramable di Sekitar Tugu Keris Siginjai Jambi",
+      metaDescription: "Kategori spot foto di sekitar Tugu Keris Siginjai: monumen, koridor Kota Baru, ruang publik. Panduan nirlaba tanpa endorse.",
+      h1: "Spot Foto di Sekitar Tugu Keris",
+      lead: "Monumen itu sendiri dan koridor Kota Baru punya sudut foto yang menarik. Panduan merangkum kategori spot tanpa menyebut 'terbaik'.",
+      facts: [
+        { label: "SUBJEK", value: "Monumen & kota" },
+        { label: "WAKTU", value: "Pagi/sore" },
+        { label: "KAWASAN", value: "Kota Baru" },
+        { label: "STATUS", value: "Nirlaba" },
+      ],
+      sections: [
+        {
+          heading: "Monumen sebagai subjek",
+          paragraphs: [
+            "Tugu Keris Siginjai dengan bentuk kerisnya jadi subjek foto paling langsung. Pagi dan sore memberi cahaya nyaman.",
+            "Gunakan sudut rendah atau dari seberang jalan untuk membingkai monumen dengan latar kota.",
+          ],
+        },
+        {
+          heading: "Koridor dan ruang publik",
+          paragraphs: [
+            "Jalan Kota Baru dan taman kota memberikan variasi latar. Jelajahi dengan berjalan kaki.",
+          ],
+        },
+        {
+          heading: "Tips foto",
+          bullets: [
+            "Datang pagi/sore.",
+            "Cari refleksi di genangan bila hujan.",
+            "Jaga ketertiban publik.",
+          ],
+          callout: "Panduan tak menilai 'terbaik'; pilih sudut yang nyaman bagi Anda.",
+        },
+      ],
+      faqs: [
+        { q: "Di mana spot foto utama?", a: "Monumen dan koridor Kota Baru. Panduan tak menunjuk satu titik wajib." },
+        { q: "Kapan cahaya terbaik?", a: "Pagi dan sore. Hindari tengah hari terik." },
+        { q: "Boleh foto malam?", a: "Bisa; monumen sering terang namun cek ketertiban setempat." },
+        { q: "Apakah berafiliasi?", a: "Tidak. Nirlaba tanpa endorsement." },
+      ],
+    },
+    en: {
+      metaTitle: "Photo Spots Around Keris Siginjai Monument Jambi",
+      metaDescription: "Photo-spot categories around Keris Siginjai Monument: the monument, Kota Baru corridor, public spaces. A non-profit guide, no endorsement.",
+      h1: "Photo Spots Around the Keris Monument",
+      lead: "The monument itself and the Kota Baru corridor have interesting photo corners. The guide summarises spot categories without calling any 'best'.",
+      facts: [
+        { label: "SUBJECT", value: "Monument & city" },
+        { label: "TIME", value: "Morning/evening" },
+        { label: "AREA", value: "Kota Baru" },
+        { label: "STATUS", value: "Non-profit" },
+      ],
+      sections: [
+        {
+          heading: "The monument as subject",
+          paragraphs: [
+            "Tugu Keris Siginjai, with its keris shape, is the most direct photo subject. Morning and evening give comfortable light.",
+            "Use a low angle or shoot from across the street to frame the monument with the city behind it.",
+          ],
+        },
+        {
+          heading: "Corridor and public spaces",
+          paragraphs: [
+            "Kota Baru streets and city parks add background variety. Explore on foot.",
+          ],
+        },
+        {
+          heading: "Photo tips",
+          bullets: [
+            "Come morning/evening.",
+            "Look for reflections in puddles when rainy.",
+            "Respect public order.",
+          ],
+          callout: "The guide rates no 'best'; pick the angle comfortable for you.",
+        },
+      ],
+      faqs: [
+        { q: "Where is the main photo spot?", a: "The monument and Kota Baru corridor. The guide points to no single required point." },
+        { q: "When is the best light?", a: "Morning and evening. Avoid the harsh midday sun." },
+        { q: "May I photograph at night?", a: "Yes; the monument is often lit, but check local order." },
+        { q: "Is this affiliated?", a: "No. Non-profit with no endorsement." },
+      ],
+    },
+  },
+
+  // D7 — Wisata saat hujan
+  "wisata-saat-hujan": {
+    id: {
+      metaTitle: "Wisata Saat Hujan di Sekitar Tugu Keris Siginjai Jambi",
+      metaDescription: "Opsi wisata saat hujan di sekitar Tugu Keris Siginjai: ruang ber-AC, pasar tertutup, kuliner hangat. Panduan nirlaba tanpa rekomendasi.",
+      h1: "Wisata Saat Hujan di Sekitar Tugu",
+      lead: "Jambi punya musim hujan. Bila hujan, pilih kategori aktivitas tertutup di sekitar Kota Baru: pasar, pusat perbelanjaan, dan kuliner hangat.",
+      facts: [
+        { label: "KONDISI", value: "Saat hujan" },
+        { label: "KATEGORI", value: "Tertutup & hangat" },
+        { label: "KAWASAN", value: "Kota Baru" },
+        { label: "STATUS", value: "Nirlaba" },
+      ],
+      sections: [
+        {
+          heading: "Opsi tertutup",
+          paragraphs: [
+            "Pasar tradisional dan pusat perbelanjaan umum memberi ruang tertutup untuk berjalan dan belanja.",
+            "Kuliner hangat di warung jadi pilihan saat cuaca dingin.",
+          ],
+        },
+        {
+          heading: "Tetap aman",
+          bullets: [
+            "Gunakan jalan tertutup/beratap.",
+            "Bawa payung.",
+            "Hindari genangan tak jelas.",
+          ],
+          callout: "Panduan tak mematok jam hujan; cek prakiraan cuaca resmi sebelum berangkat.",
+        },
+      ],
+      faqs: [
+        { q: "Bisa wisata saat hujan?", a: "Bisa, pilih ruang tertutup seperti pasar dan pusat perbelanjaan umum." },
+        { q: "Aman berjalan saat hujan?", a: "Gunakan area beratap dan hindari genangan. Konfirmasikan cuaca resmi." },
+        { q: "Kuliner apa yang cocok?", a: "Kategori makanan hangat di warung sekitar monumen." },
+        { q: "Apakah berafiliasi?", a: "Tidak. Panduan nirlaba." },
+      ],
+    },
+    en: {
+      metaTitle: "Rainy-Day Visits Around Keris Siginjai Monument Jambi",
+      metaDescription: "Rainy-day options around Keris Siginjai Monument: indoor space, covered markets, warm food. A non-profit guide with no recommendations.",
+      h1: "Rainy-Day Visits Around the Monument",
+      lead: "Jambi has a rainy season. When it rains, pick covered-activity categories around Kota Baru: markets, shopping centres, and warm food.",
+      facts: [
+        { label: "CONDITION", value: "When raining" },
+        { label: "CATEGORY", value: "Covered & warm" },
+        { label: "AREA", value: "Kota Baru" },
+        { label: "STATUS", value: "Non-profit" },
+      ],
+      sections: [
+        {
+          heading: "Covered options",
+          paragraphs: [
+            "Traditional markets and general shopping centres give covered space to walk and shop.",
+            "Warm food at warung is a good choice in cool weather.",
+          ],
+        },
+        {
+          heading: "Stay safe",
+          bullets: [
+            "Use covered/roofed walkways.",
+            "Carry an umbrella.",
+            "Avoid unclear puddles.",
+          ],
+          callout: "The guide sets no rain hours; check the official forecast before travelling.",
+        },
+      ],
+      faqs: [
+        { q: "Can I visit in the rain?", a: "Yes—pick covered spaces like markets and general shopping centres." },
+        { q: "Safe to walk in the rain?", a: "Use roofed areas and avoid puddles. Confirm official weather." },
+        { q: "What food fits?", a: "Categories of warm food at warung near the monument." },
+        { q: "Is this affiliated?", a: "No. A non-profit guide." },
+      ],
+    },
+  },
+
+  // D8 — Taman kota & ruang publik
+  "taman-kota-ruang-publik": {
+    id: {
+      metaTitle: "Taman Kota & Ruang Publik Dekat Tugu Keris Siginjai Jambi",
+      metaDescription: "Kategori taman kota dan ruang publik di sekitar Tugu Keris Siginjai: taman rimba, plaza, jalur jalan kaki. Panduan nirlaba, arah umum.",
+      h1: "Taman Kota & Ruang Publik di Sekitar Tugu",
+      lead: "Untuk istirahat gratis dan terbuka, Kota Jambi punya kategori taman kota dan ruang publik. Panduan merangkum pilihannya tanpa menyebut satu nama resmi.",
+      facts: [
+        { label: "KATEGORI", value: "Taman & plaza" },
+        { label: "BIAYA", value: "Umum/gratis" },
+        { label: "KAWASAN", value: "Kota Jambi" },
+        { label: "STATUS", value: "Nirlaba" },
+      ],
+      sections: [
+        {
+          heading: "Taman kota",
+          paragraphs: [
+            "Taman kota dan hutan kota memberi ruang terbuka untuk berjalan atau duduk. Ini fasilitas umum warga.",
+            "Gunakan 'taman kota' di sekitar pusat sebagai orientasi.",
+          ],
+        },
+        {
+          heading: "Ruang publik lain",
+          paragraphs: [
+            "Plaza dan jalur pejalan kaki di Kota Baru cocok untuk jalan santai sore hari.",
+          ],
+        },
+        {
+          heading: "Etika berruang",
+          bullets: [
+            "Jaga kebersihan.",
+            "Gunakan jalur pejalan kaki.",
+            "Hargai ketertiban umum.",
+          ],
+          callout: "Panduan merujuk kategori ruang publik, bukan satu lokasi wajib.",
+        },
+      ],
+      faqs: [
+        { q: "Ada taman dekat monumen?", a: "Kategori taman kota dan hutan kota di Kota Jambi. Panduan tak menunjuk satu alamat." },
+        { q: "Gratis?", a: "Ruang publik umumnya terbuka untuk umum. Konfirmasikan aturan setempat." },
+        { q: "Ramah keluarga?", a: "Ya, ruang terbuka cocok keluarga. Awasi anak di area jalan." },
+        { q: "Apakah berafiliasi?", a: "Tidak. Nirlaba tanpa endorsement." },
+      ],
+    },
+    en: {
+      metaTitle: "City Parks & Public Spaces Near Keris Siginjai Monument Jambi",
+      metaDescription: "Categories of city parks and public spaces around Keris Siginjai Monument: urban forest, plazas, walkways. A non-profit guide, general directions.",
+      h1: "City Parks & Public Spaces Around the Monument",
+      lead: "For free, open rest, Jambi City has categories of city parks and public spaces. The guide summarises the options without naming one official place.",
+      facts: [
+        { label: "CATEGORY", value: "Parks & plazas" },
+        { label: "COST", value: "Public/free" },
+        { label: "AREA", value: "Jambi City" },
+        { label: "STATUS", value: "Non-profit" },
+      ],
+      sections: [
+        {
+          heading: "City parks",
+          paragraphs: [
+            "City parks and urban forest give open space to walk or sit. These are public facilities for residents.",
+            "Use 'city park' around the centre as orientation.",
+          ],
+        },
+        {
+          heading: "Other public spaces",
+          paragraphs: [
+            "Plazas and pedestrian paths in Kota Baru suit relaxed evening walks.",
+          ],
+        },
+        {
+          heading: "Public-space etiquette",
+          bullets: [
+            "Keep it clean.",
+            "Use pedestrian paths.",
+            "Respect public order.",
+          ],
+          callout: "The guide refers to public-space categories, not one required location.",
+        },
+      ],
+      faqs: [
+        { q: "Are there parks near the monument?", a: "Categories of city parks and urban forest in Jambi City. The guide names no single address." },
+        { q: "Free?", a: "Public spaces are generally open to all. Confirm local rules." },
+        { q: "Family-friendly?", a: "Yes, open spaces suit families. Watch children near roads." },
+        { q: "Is this affiliated?", a: "No. Non-profit with no endorsement." },
+      ],
+    },
+  },
+
+  // D9 — Walking tour Kota Baru
+  "walking-tour-kota-baru": {
+    id: {
+      metaTitle: "Walking Tour Kota Baru dari Tugu Keris Siginjai Jambi",
+      metaDescription: "Rute jalan kaki mandiri di Kota Baru dari Tugu Keris Siginjai: monumen, koridor, ruang publik. Panduan nirlaba, bukan tur berbayar.",
+      h1: "Walking Tour Kota Baru dari Monumen",
+      lead: "Kota Baru padat dan datar, cocok dijelajahi dengan berjalan kaki. Rute ini mulai dari monumen dan menyusuri koridor sekitarnya secara mandiri.",
+      facts: [
+        { label: "MODA", value: "Jalan kaki" },
+        { label: "JARAK", value: "Dekat" },
+        { label: "KAWASAN", value: "Kota Baru" },
+        { label: "STATUS", value: "Nirlaba" },
+      ],
+      sections: [
+        {
+          heading: "Rute dasar",
+          paragraphs: [
+            "Mulai dari Tugu Keris Siginjai, lalu susuri koridor jalan utama Kota Baru. Jarak antar titik dekat sehingga nyaman berjalan.",
+            "Gunakan monumen sebagai titik awal; arah umum mengikuti jalan utama kota.",
+          ],
+        },
+        {
+          heading: "Apa yang dilewati",
+          bullets: [
+            "Monumen sebagai awal.",
+            "Koridor kafe dan warung.",
+            "Taman atau ruang publik di ujung.",
+          ],
+          callout: "Ini rute mandiri, bukan tur berpemandu. Bawa air dan topi bila terik.",
+        },
+      ],
+      faqs: [
+        { q: "Bisa jalan kaki dari monumen?", a: "Bisa; Kota Baru datar dan titik menarik dekat." },
+        { q: "Perlu pemandu?", a: "Tidak. Panduan mandiri; gunakan peta umum." },
+        { q: "Berapa lama rute?", a: "Fleksibel, tergantung banyaknya berhenti. Santai dalam 1–2 jam." },
+        { q: "Apakah berafiliasi?", a: "Tidak. Panduan nirlaba tanpa endorsement." },
+      ],
+    },
+    en: {
+      metaTitle: "Kota Baru Walking Tour from Keris Siginjai Monument Jambi",
+      metaDescription: "A self-guided walking route in Kota Baru from Keris Siginjai Monument: monument, corridor, public spaces. A non-profit guide, not a paid tour.",
+      h1: "Kota Baru Walking Tour from the Monument",
+      lead: "Kota Baru is compact and flat, ideal to explore on foot. This route starts at the monument and follows the surrounding corridor on your own.",
+      facts: [
+        { label: "MODE", value: "On foot" },
+        { label: "DISTANCE", value: "Close" },
+        { label: "AREA", value: "Kota Baru" },
+        { label: "STATUS", value: "Non-profit" },
+      ],
+      sections: [
+        {
+          heading: "Basic route",
+          paragraphs: [
+            "Start at Tugu Keris Siginjai, then follow the Kota Baru main-street corridor. Points are close, so walking is comfortable.",
+            "Use the monument as your start; general direction follows the city's main road.",
+          ],
+        },
+        {
+          heading: "What you pass",
+          bullets: [
+            "The monument as a start.",
+            "Café and warung corridor.",
+            "A park or public space at the end.",
+          ],
+          callout: "This is a self-guided route, not a guided tour. Bring water and a hat if sunny.",
+        },
+      ],
+      faqs: [
+        { q: "Can I walk from the monument?", a: "Yes; Kota Baru is flat and the interesting points are close." },
+        { q: "Do I need a guide?", a: "No. Self-guided; use a general map." },
+        { q: "How long is the route?", a: "Flexible, depending on stops. Relaxed in 1–2 hours." },
+        { q: "Is this affiliated?", a: "No. A non-profit guide with no endorsement." },
+      ],
+    },
+  },
+};
+
 const UPDATED_ID = "Oktober 2026";
 const UPDATED_EN = "October 2026";
 
@@ -2102,15 +2837,15 @@ export const topics: Topic[] = [
   { slug: "kuliner-murah-meriah", group: "kuliner", updated: UPDATED_ID, related: ["jajanan-pasar-street-food", "kuliner-khas-jambi-tradisional"], ready: true, id: batchAC["kuliner-murah-meriah"].id, en: batchAC["kuliner-murah-meriah"].en },
 
   // D — Sekitar & Itinerari (draft)
-  { slug: "destinasi-wisata-terdekat", group: "sekitar", updated: UPDATED_ID, related: ["itinerary-1-hari", "walking-tour-kota-baru"], ready: false },
-  { slug: "itinerary-1-hari", group: "sekitar", updated: UPDATED_ID, related: ["itinerary-setengah-hari", "destinasi-wisata-terdekat"], ready: false },
-  { slug: "itinerary-setengah-hari", group: "sekitar", updated: UPDATED_ID, related: ["itinerary-1-hari", "walking-tour-kota-baru"], ready: false },
-  { slug: "mall-pasar-tradisional", group: "sekitar", updated: UPDATED_ID, related: ["kuliner-legendaris-dekat-tugu", "destinasi-wisata-terdekat"], ready: false },
-  { slug: "aktivitas-malam-hari", group: "sekitar", updated: UPDATED_ID, related: ["makan-malam-kuliner-malam", "nongkrong-anak-muda"], ready: false },
-  { slug: "spot-foto-instagramable", group: "sekitar", updated: UPDATED_ID, related: ["walking-tour-kota-baru", "waktu-terbaik-kunjungi"], ready: false },
-  { slug: "wisata-saat-hujan", group: "sekitar", updated: UPDATED_ID, related: ["tips-wisata-aman", "mall-pasar-tradisional"], ready: false },
-  { slug: "taman-kota-ruang-publik", group: "sekitar", updated: UPDATED_ID, related: ["walking-tour-kota-baru", "destinasi-wisata-terdekat"], ready: false },
-  { slug: "walking-tour-kota-baru", group: "sekitar", updated: UPDATED_ID, related: ["taman-kota-ruang-publik", "destinasi-wisata-terdekat"], ready: false },
+  { slug: "destinasi-wisata-terdekat", group: "sekitar", updated: UPDATED_ID, related: ["itinerary-1-hari", "walking-tour-kota-baru"], ready: true, id: batchD["destinasi-wisata-terdekat"].id, en: batchD["destinasi-wisata-terdekat"].en },
+  { slug: "itinerary-1-hari", group: "sekitar", updated: UPDATED_ID, related: ["itinerary-setengah-hari", "destinasi-wisata-terdekat"], ready: true, id: batchD["itinerary-1-hari"].id, en: batchD["itinerary-1-hari"].en },
+  { slug: "itinerary-setengah-hari", group: "sekitar", updated: UPDATED_ID, related: ["itinerary-1-hari", "walking-tour-kota-baru"], ready: true, id: batchD["itinerary-setengah-hari"].id, en: batchD["itinerary-setengah-hari"].en },
+  { slug: "mall-pasar-tradisional", group: "sekitar", updated: UPDATED_ID, related: ["kuliner-legendaris-dekat-tugu", "destinasi-wisata-terdekat"], ready: true, id: batchD["mall-pasar-tradisional"].id, en: batchD["mall-pasar-tradisional"].en },
+  { slug: "aktivitas-malam-hari", group: "sekitar", updated: UPDATED_ID, related: ["makan-malam-kuliner-malam", "nongkrong-anak-muda"], ready: true, id: batchD["aktivitas-malam-hari"].id, en: batchD["aktivitas-malam-hari"].en },
+  { slug: "spot-foto-instagramable", group: "sekitar", updated: UPDATED_ID, related: ["walking-tour-kota-baru", "waktu-terbaik-kunjungi"], ready: true, id: batchD["spot-foto-instagramable"].id, en: batchD["spot-foto-instagramable"].en },
+  { slug: "wisata-saat-hujan", group: "sekitar", updated: UPDATED_ID, related: ["tips-wisata-aman", "mall-pasar-tradisional"], ready: true, id: batchD["wisata-saat-hujan"].id, en: batchD["wisata-saat-hujan"].en },
+  { slug: "taman-kota-ruang-publik", group: "sekitar", updated: UPDATED_ID, related: ["walking-tour-kota-baru", "destinasi-wisata-terdekat"], ready: true, id: batchD["taman-kota-ruang-publik"].id, en: batchD["taman-kota-ruang-publik"].en },
+  { slug: "walking-tour-kota-baru", group: "sekitar", updated: UPDATED_ID, related: ["taman-kota-ruang-publik", "destinasi-wisata-terdekat"], ready: true, id: batchD["walking-tour-kota-baru"].id, en: batchD["walking-tour-kota-baru"].en },
 ];
 
 export function getReadyTopics(): Topic[] {
